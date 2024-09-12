@@ -35,5 +35,17 @@ undefined;
 
 // функція
 // alert('some information');
-console.log(3465);
-console.log('blablabla');
+// console.log(3465);
+// console.log('blablabla');
+
+// змінні
+// створення пустої змінної (оголошення змінної)
+let age;
+
+// встановлення/присвоєння значення змінної
+age = 15;
+console.log(age);
+
+// ініціалізація змінної (оголошення + присвоєння одразу)
+let otherUserAge = 5;
+console.log(otherUserAge);
