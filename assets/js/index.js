@@ -31,4 +31,9 @@ null;
 undefined;
 
 // тип даних Symbol
-new Symbol('приклад символу')
+// new Symbol('приклад символу')
+
+// функція
+// alert('some information');
+console.log(3465);
+console.log('blablabla');
