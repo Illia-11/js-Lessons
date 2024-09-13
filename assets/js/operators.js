@@ -12,7 +12,11 @@ console.log(typeof bug); // object
 // Математичні оператори
 // +, -, *, /,
 console.log('2 + 2');
-console.log(2 + 2);
+console.log(2 + 2); // нормальна математика
+console.log(true + true + true); // = 3
+// конкатенація (склеювання) рядків
+console.log('___' + 10 + 25 + 40); // ___102540
+console.log('' + null); // null
 
 console.log('9 - 2');
 console.log(9 - 2);
@@ -60,3 +64,14 @@ console.log(counter2++); // 10
 console.log(counter2); // 11
 console.log(counter2++); // 11
 console.log(counter2); // 12
+
+// ударні оператори
+// + , -
+
+console.log(-10);
+console.log(+500);
+// перетворення типу на числовий
+console.log(-'hgilrcewhgowebfjslkvsdfk');
+console.log(-true);
+console.log(+false);
+console.log(+'-1234');
