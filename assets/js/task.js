@@ -19,5 +19,5 @@ let rem = mult % 2.687;
 console.log(rem);
 
 // task5
-let numSum6 = '' + numSum;
-console.log(numSum6);
+let toStr = '' + numSum;
+console.log(toStr);
