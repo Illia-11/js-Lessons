@@ -9,7 +9,11 @@ console.log(typeof data);
 let bug = null;
 console.log(typeof bug); // object
 
+
 // Математичні оператори
+
+console.log('========= Математичні оператори =========')
+
 // +, -, *, /,
 console.log('2 + 2');
 console.log(2 + 2); // нормальна математика
@@ -67,7 +71,6 @@ console.log(counter2); // 12
 
 // ударні оператори
 // + , -
-
 console.log(-10);
 console.log(+500);
 // перетворення типу на числовий
@@ -75,3 +78,25 @@ console.log(-'hgilrcewhgowebfjslkvsdfk');
 console.log(-true);
 console.log(+false);
 console.log(+'-1234');
+
+
+// Логічні оператори
+console.log('========= Логічні оператори =========')
+
+// Порівняння
+/* 
+  > - більше
+  < - менше
+  <= - більше або дорівнює
+  >= - менше або дорівнює
+*/
+console.log(10 > 5); // true
+console.log(5 > 10); // false
+
+console.log(10 > 10); // false
+console.log(10 > 10); // false
+
+console.log(10 >= 10); // true
+console.log(10 <= 10); // true
+
+console.log('cat' > 'elefant'); // false
