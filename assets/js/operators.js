@@ -157,3 +157,21 @@ console.log('text' && 15);
 console.log(null && NaN); // null
 console.log(100 && undefined); // undefined
 console.log('text' && -57); // -57
+
+// Присвоєння
+/* 
+  +=
+  -=
+  *=
+  /=
+  **=
+*/
+let age = 50;
+
+// age = age + 5;
+age += 5;
+age -= 5;
+
+age += 1;
+
+console.log(age);
