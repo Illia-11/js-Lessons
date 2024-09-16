@@ -133,3 +133,27 @@ console.log(!NaN); // true
 
 // Перетворення значення на булевий еквівалент
 console.log(!!10); // true
+
+// Логічне "І" та логічне "АБО"
+/* 
+  && - Логічне "І"
+    повертає правдиве значення якщо і ліва і права частина правдива
+    (повертає або перше брехливе значення або останнє правдиве значення)
+
+  || - Логічне "АБО"
+    повертає правдиве значення якщо або лів або права частина є правдивою
+    (повертає або перше правдиве значення або останнє брехливе значення)
+*/
+const textNumber = 17.5;
+// console.log(100 > textNumber  >= 0);
+console.log(textNumber > 0); // true
+console.log(textNumber < 100); // true
+
+console.log(textNumber > 0 && textNumber < 100); // true
+
+console.log(textNumber > 0 || textNumber < 100); // true
+
+console.log('text' && 15);
+console.log(null && NaN); // null
+console.log(100 && undefined); // undefined
+console.log('text' && -57); // -57
