@@ -40,6 +40,17 @@
 
 const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   // тіло функції - блок коду який буде виконано коли функція запуститься
+
+  // завершити функцію якщо параметри не є нормальними числами
+  if(typeof firstNumber !== 'number' || typeof secondNumber !== 'number') {
+    return null;
+  }
+
+  // if(firstNumber !== firstNumber) {
+  if(isNaN(firstNumber - secondNumber)) {
+    return null;
+  }
+
   // console.log('Hello from first function');
   // console.log('You can do anything you want here');
   // console.log('Ви передали функції на вхід наступне значення: ' + firstParam);
@@ -61,10 +72,10 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
 // const result = getSumOfTwoNumbers(100, 50);
 // console.log('Result is: ' + result);
 
-const num1 = +prompt("Enter first number: ");
-const num2 = +prompt("Enter first number: ");
+// const num1 = +prompt("Enter first number: ");
+// const num2 = +prompt("Enter first number: ");
 
-const result2 = getSumOfTwoNumbers(num1, num2);
+const result2 = getSumOfTwoNumbers(NaN, 10);
 console.log('Result2 is: ' + result2);
 
 // alert('Result is: ' + result);
