@@ -31,15 +31,6 @@
 // Створення функції
 
 // functional expression (функціональний вираз)
-const myFirstFunction = function(firstParam, secondParam, thirdParam) {
-  // тіло функції - блок коду який буде виконано коли функція запуститься
-  console.log('Hello from first function');
-  console.log('You can do anything you want here');
-  console.log('Ви передали функції на вхід наступне значення: ' + firstParam)
-}
-myFirstFunction(10);
-myFirstFunction('this is firstParam');
-myFirstFunction();
 
 // const mySecondFunction = function() {
 //   console.log('Hello, world!')
@@ -47,3 +38,32 @@ myFirstFunction();
 // }
 // mySecondFunction();
 
+const myFirstFunction = function(firstNumber, secondNumber) {
+  // тіло функції - блок коду який буде виконано коли функція запуститься
+  // console.log('Hello from first function');
+  // console.log('You can do anything you want here');
+  // console.log('Ви передали функції на вхід наступне значення: ' + firstParam);
+
+  const sumResult = firstNumber + secondNumber;
+
+  // return каже функції її підсумковий результат роботи
+  // після першого виконаного рядка з return функція зупиняє свою роботу
+  // return firstNumber + secondNumber;
+  return sumResult;
+
+  console.log(sumResult);
+}
+const result = myFirstFunction(10, 5);
+alert('Result is: ' + result);
+
+
+// const result1 = myFirstFunction(10);
+// myFirstFunction('this is firstParam');
+// myFirstFunction();
+// console.log(result1);
+
+// const consoleLogRes = console.log();
+// const alertRes = alert();
+
+// console.log(consoleLogRes);
+// console.log(alertRes);
