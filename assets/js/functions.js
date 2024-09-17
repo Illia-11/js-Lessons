@@ -58,8 +58,8 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   console.log(sumResult);
 }
 
-const result = getSumOfTwoNumbers(100, 50);
-console.log('Result is: ' + result);
+// const result = getSumOfTwoNumbers(100, 50);
+// console.log('Result is: ' + result);
 
 const num1 = +prompt("Enter first number: ");
 const num2 = +prompt("Enter first number: ");
