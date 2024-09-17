@@ -38,7 +38,7 @@
 // }
 // mySecondFunction();
 
-const myFirstFunction = function(firstNumber, secondNumber) {
+const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   // тіло функції - блок коду який буде виконано коли функція запуститься
   // console.log('Hello from first function');
   // console.log('You can do anything you want here');
@@ -51,10 +51,11 @@ const myFirstFunction = function(firstNumber, secondNumber) {
   // return firstNumber + secondNumber;
   return sumResult;
 
+  // це недосяжний блок коду
   console.log(sumResult);
 }
-const result = myFirstFunction(10, 5);
-alert('Result is: ' + result);
+const result = getSumOfTwoNumbers(10, 5);
+// alert('Result is: ' + result);
 
 
 // const result1 = myFirstFunction(10);
