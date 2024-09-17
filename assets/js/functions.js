@@ -44,6 +44,9 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   // console.log('You can do anything you want here');
   // console.log('Ви передали функції на вхід наступне значення: ' + firstParam);
 
+  // const firstNumber = +prompt("Enter first number: ");
+  // const secondNumber = +prompt("Enter second number: ");
+
   const sumResult = firstNumber + secondNumber;
 
   // return каже функції її підсумковий результат роботи
@@ -54,10 +57,17 @@ const getSumOfTwoNumbers = function(firstNumber, secondNumber) {
   // це недосяжний блок коду
   console.log(sumResult);
 }
-const result = getSumOfTwoNumbers(10, 5);
+
+const result = getSumOfTwoNumbers(100, 50);
+console.log('Result is: ' + result);
+
+const num1 = +prompt("Enter first number: ");
+const num2 = +prompt("Enter first number: ");
+
+const result2 = getSumOfTwoNumbers(num1, num2);
+console.log('Result2 is: ' + result2);
+
 // alert('Result is: ' + result);
-
-
 // const result1 = myFirstFunction(10);
 // myFirstFunction('this is firstParam');
 // myFirstFunction();
