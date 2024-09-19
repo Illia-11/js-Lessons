@@ -27,3 +27,23 @@ console.log(number); // 10
 testFunc();
 
 console.log(number); // 10
+
+
+// Чому var поганий
+
+var varVariable1 = 'var 1';
+console.log(varVariable1);
+varVariable1 = 'change';
+console.log(varVariable1);
+const carTestingFunction = function() {
+  var varVariable1 = 5;
+  console.log(varVariable1); // 5
+  if(true) {
+    var varVariable2 = 'var';
+    console.log(varVariable1); // 5
+    console.log(varVariable2); // 100
+  
+  console.log(number2);
+  }
+}
+carTestingFunction();
