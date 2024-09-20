@@ -36,8 +36,25 @@
 //   }
 // }
 
-let shouldContinue = true;
-while (shouldContinue) {
-  alert('iteration');
-  shouldContinue = confirm('Чи треба продовжувати?');
+// let shouldContinue = true;
+// while (shouldContinue) {
+//   alert('iteration');
+//   shouldContinue = confirm('Чи треба продовжувати?');
+// }
+
+
+let oddNumber = 0;
+while (oddNumber < 10) {
+  if(oddNumber % 2 !== 0) {
+    console.log(oddNumber);
+  }
+  oddNumber++;
 }
+// Виведе
+// 1
+// 3
+// 5
+// 7
+// 9
+
+
