@@ -43,13 +43,13 @@
 // }
 
 
-let oddNumber = 0;
-while (oddNumber < 10) {
-  if(oddNumber % 2 !== 0) {
-    console.log(oddNumber);
-  }
-  oddNumber++;
-}
+// let oddNumber = 0;
+// while (oddNumber < 10) {
+//   if(oddNumber % 2 !== 0) {
+//     console.log(oddNumber);
+//   }
+//   oddNumber++;
+// }
 // Виведе
 // 1
 // 3
@@ -58,3 +58,17 @@ while (oddNumber < 10) {
 // 9
 
 
+// цикл do ... while
+/*
+  цикл do ... while завжди відпрацює мінімум 1 раз
+
+  do {
+  // тілщ циклу 
+} while (умова)
+*/
+
+let counter2 = 0;
+do {
+  alert('iteration');
+  counter2++;
+} while (counter2 < 5);
