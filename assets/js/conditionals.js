@@ -57,22 +57,22 @@ if(text) {
 //   // action 2
 //   alert('Hello, user');
 // }
-userName ? alert('Hello, ' + userName) : alert('Hello, user');
+// userName ? alert('Hello, ' + userName) : alert('Hello, user');
 
 
-const getUserPrompt = function() {
-  const userPrompt = prompt('Enter smt');
+// const getUserPrompt = function() {
+//   const userPrompt = prompt('Enter smt');
 
-  // if(userPrompt) {
-  //   return userPrompt;
-  // } else {
-  //   return 'User enter nothing';
-  // }
+//   // if(userPrompt) {
+//   //   return userPrompt;
+//   // } else {
+//   //   return 'User enter nothing';
+//   // }
 
-  return userPrompt ? userPrompt : 'user enter nothing';
-}
-const res1 = getUserPrompt();
-console.log(res1);
+//   return userPrompt ? userPrompt : 'user enter nothing';
+// }
+// const res1 = getUserPrompt();
+// console.log(res1);
 
 
 // const userName = prompt('Enter your name');
@@ -88,14 +88,14 @@ console.log(res1);
 
 // alert(greetinMessage);
 
-const userName = prompt('Enter your name');
+// const userName = prompt('Enter your name');
 
-if(userName) {
-  alert('Hello, ' + userName);
-} else {
-  alert('Hello, user');
-}
-alert( userName ? ('Hello, ' + userName) : ('Hello, user'));
+// if(userName) {
+//   alert('Hello, ' + userName);
+// } else {
+//   alert('Hello, user');
+// }
+// alert( userName ? ('Hello, ' + userName) : ('Hello, user'));
 
 // конструкція switch ... case
 /*
@@ -138,32 +138,78 @@ alert( userName ? ('Hello, ' + userName) : ('Hello, user'));
 //   }
 // }
 
-const getCardCashbackPercentage = function(cardLevel) {
-  let cashbackPercentage;
+// const getCardCashbackPercentage = function(cardLevel) {
+//   let cashbackPercentage;
 
-  switch (cardLevel) {
-    case 'basic': 
-    case 'basic+':
-    case 'basic++': {
-      cashbackPercentage = 1;
-      break;
+//   switch (cardLevel) {
+//     case 'basic': 
+//     case 'basic+':
+//     case 'basic++': {
+//       cashbackPercentage = 1;
+//       break;
+//     }
+//     case 'pro': {
+//       cashbackPercentage = 1.1;
+//       break;
+//     }
+//     case 'gold': {
+//       cashbackPercentage = 2;
+//       break;
+//     }
+//     case 'platinum': {
+//       cashbackPercentage = 5;
+//       break;
+//     }
+//     default: {
+//       cashbackPercentage = 0;
+//     }
+//   }
+
+//   return cashbackPercentage;
+// }
+
+
+const getSeason = function(month) {
+  switch(month) {
+    case 'December':
+    case 'January':
+    case 'February':
+    case 1:
+    case 2:
+    case 12: {
+      return 'Winter'
     }
-    case 'pro': {
-      cashbackPercentage = 1.1;
-      break;
+    case 'March':
+    case 'April':
+    case 'May':
+    case 3:
+    case 4:
+    case 5: {
+      return 'Spring';
     }
-    case 'gold': {
-      cashbackPercentage = 2;
-      break;
+    case 'June':
+    case 'July':
+    case 'August':
+    case 6:
+    case 7:
+    case 8: {
+      return 'Summer'
     }
-    case 'platinum': {
-      cashbackPercentage = 5;
-      break;
+    case 'September':
+    case 'October':
+    case 'Novermber':
+    case 9:
+    case 10:
+    case 11: {
+      return 'Autumn';
     }
     default: {
-      cashbackPercentage = 0;
+      return false;
     }
   }
-
-  return cashbackPercentage;
-}
+} 
+  let month = prompt('Enter a month or number: ');
+  if (!isNaN(month)) {
+    month = parseInt(month);
+  }
+  console.log(getSeason(month));
