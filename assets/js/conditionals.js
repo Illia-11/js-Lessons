@@ -96,3 +96,74 @@ if(userName) {
   alert('Hello, user');
 }
 alert( userName ? ('Hello, ' + userName) : ('Hello, user'));
+
+// конструкція switch ... case
+/*
+  може бути зручною коли ви хочете виконати певні дії, виходячи з конкретних значень певної змінної або виразу
+
+  switch (змінна_або_вираз) {
+    case значення_А: {
+      // блок коду А
+    }
+    case значення_B: {
+      // блок коду B
+    }
+    default {
+      // виконається, якщо всі кейси зверху не підійдуть
+    }
+  }
+
+  порівння проводиться у вигляді: 
+    змінна_або_вираз === значення_А
+    для кожного кейсу до першої правди
+*/
+
+// let value = 1;
+
+// switch (value) {
+//   case 1: {
+//     alert('value confirm meaning 1');
+
+//     // зупиняє виконання світча після себе
+//     break;
+//   }
+//   case 2: {
+//     alert('value confirm meaning 2');
+//   }
+//   case 'test': {
+//     alert('value confirm meaning test');
+//   }
+//   default: {
+//     alert('Meanning value not correct');
+//   }
+// }
+
+const getCardCashbackPercentage = function(cardLevel) {
+  let cashbackPercentage;
+
+  switch (cardLevel) {
+    case 'basic': 
+    case 'basic+':
+    case 'basic++': {
+      cashbackPercentage = 1;
+      break;
+    }
+    case 'pro': {
+      cashbackPercentage = 1.1;
+      break;
+    }
+    case 'gold': {
+      cashbackPercentage = 2;
+      break;
+    }
+    case 'platinum': {
+      cashbackPercentage = 5;
+      break;
+    }
+    default: {
+      cashbackPercentage = 0;
+    }
+  }
+
+  return cashbackPercentage;
+}
