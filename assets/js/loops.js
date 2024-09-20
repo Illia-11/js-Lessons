@@ -20,11 +20,24 @@
 //   alert('Тіло циклу виконано');
 // }
 
-let counter = 0;
+// let counter = 0;
+// while (counter < 10) {
+//   // виконання тіла циклу називається ітерацією
+//   counter++;
+//   console.log(counter);
+// }
 
-while (counter < 10) {
-  // виконання тіла циклу називається ітерацією
-  counter++;
-  console.log(counter);
+// let counter = 0;
+// while (true) {
+//   alert('iteration');
+//   if(counter++ > 3) {
+//     // зупиняє виконання циклу
+//     break;
+//   }
+// }
+
+let shouldContinue = true;
+while (shouldContinue) {
+  alert('iteration');
+  shouldContinue = confirm('Чи треба продовжувати?');
 }
-
