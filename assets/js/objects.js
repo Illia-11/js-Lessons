@@ -20,6 +20,19 @@ const object1 = {
   }
 };
 
+// practice task
+// const user = {
+//   name: 'Petro',
+//   lastName: 'Petrov',
+//   age: 46,
+//   isMale: true,
+//   mail: 'petro34@gmail.com',
+//   password: 184394,
+//   eating: function() {
+//     alert('I am eating');
+//   }
+// }
+
 const citramon = {
   type: 'таблетки',
   doze: 2,
