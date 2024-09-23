@@ -69,6 +69,7 @@ const cat = {
 };
 console.log(cat);
 
+
 // зчитування об'єктів (Read)
 console.log(user);
 // alert(user); // приводить об'єкт до рядка, що зазвичай є проблемою
@@ -80,5 +81,26 @@ console.log(user.mail);
 
 
 // оновлення значень (Update)
+
+// let email = 'test@gmail.com';
+// email = 'test1@gmail.com';
+
+// let age = 46;
+// age += 2;
+// age++;
+
+user.mail = 'pedro@gmail.com';
+console.log(user.mail);
+
+user.age += 2;
+console.log(user.age); 
+user.age++;
+console.log(user.age);
+
+// додавати нові властивості до існуючого об'єкту
+
+user.accountBalance = 34635;
+console.log(user);
+
 
 // видалення значень (Delete)
