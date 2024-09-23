@@ -103,4 +103,10 @@ user.accountBalance = 34635;
 console.log(user);
 
 
-// видалення значень (Delete)
+// видалення значень об'єкта (Delete)
+
+// 1 чере delete
+delete user.accountBalance;
+
+// 2 присвоєння undefined
+user.age = undefined;
