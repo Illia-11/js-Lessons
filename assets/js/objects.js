@@ -21,17 +21,17 @@ const object1 = {
 };
 
 // practice task
-// const user = {
-//   name: 'Petro',
-//   lastName: 'Petrov',
-//   age: 46,
-//   isMale: true,
-//   mail: 'petro34@gmail.com',
-//   password: 184394,
-//   eating: function() {
-//     alert('I am eating');
-//   }
-// }
+const user = {
+  name: 'Petro',
+  lastName: 'Petrov',
+  age: 46,
+  isMale: true,
+  mail: 'petro34@gmail.com',
+  password: 184394,
+  eating: function() {
+    alert('I am eating');
+  }
+}
 
 const citramon = {
   type: 'таблетки',
@@ -70,6 +70,14 @@ const cat = {
 console.log(cat);
 
 // зчитування об'єктів (Read)
+console.log(user);
+// alert(user); // приводить об'єкт до рядка, що зазвичай є проблемою
+console.log(user + '');
+
+// отримання даних з об'єкта
+// назваОб'єкта.назваВластивості
+console.log(user.mail);
+
 
 // оновлення значень (Update)
 
