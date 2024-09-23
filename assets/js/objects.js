@@ -27,15 +27,37 @@ const citramon = {
   isSoldFree: true,
   maxAmount: 20,
   amount: 14
-}
+};
 
 const phone = {
   brand: 'Apple',
   model: '12 Pro',
-  price: 6579803576804365,
+  price: 657,
   isOn: false,
   color: 'Pacific Blue',
   callSmb: function() {
     alert('дзвонимо комусь. Тут будуть гудки');
   }
-}
+};
+
+// створення об'єктів (Create)
+const obj1 = {}; // найчастіше, літерал
+const obj2 = Object(); // рідко
+const obj3 = new Object(); // достатньо часто,
+// використовується при створення об'єктів зі специфічною структурою
+
+const cat = {
+  name: 'Polina',
+  furColor: 'white',
+  eyesColor: 'blue',
+  breed: 'British shynshyla',
+  isSleeping: false,
+  age: 2
+};
+console.log(cat);
+
+// зчитування об'єктів (Read)
+
+// оновлення значень (Update)
+
+// видалення значень (Delete)
