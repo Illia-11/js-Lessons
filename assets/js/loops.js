@@ -43,21 +43,6 @@
 // }
 
 
-// let oddNumber = 0;
-// while (oddNumber < 10) {
-//   if(oddNumber % 2 !== 0) {
-//     console.log(oddNumber);
-//   }
-//   oddNumber++;
-// }
-// Виведе
-// 1
-// 3
-// 5
-// 7
-// 9
-
-
 // цикл do ... while
 /*
   цикл do ... while завжди відпрацює мінімум 1 раз
@@ -67,8 +52,39 @@
 } while (умова)
 */
 
-let counter2 = 0;
-do {
-  alert('iteration');
-  counter2++;
-} while (counter2 < 5);
+// let counter2 = 0;
+// do {
+//   alert('iteration');
+//   counter2++;
+// } while (counter2 < 5);
+
+
+// let oddNumber = 1;
+// while (oddNumber < 10) {
+//   if(oddNumber % 2 !== 0) {
+//     console.log(oddNumber);
+//   }
+//   oddNumber += 2;
+// }
+// Виведе
+// 1
+// 3
+// 5
+// 7
+// 9
+
+let count = 0;
+
+while(true) {
+  count++;
+  if(count % 2 === 0) {
+    // достроково переходить на нове коло (ітерацію)
+    continue;
+  }
+
+  console.log(count);
+
+  if(count >= 10) {
+    break
+  }
+}
