@@ -1,5 +1,5 @@
 // Об'єкти
-"use strict"
+"use strict";
 // приклад даних користувача
 // ПОГАНО
 const user1Name = 'testUser';
@@ -150,3 +150,34 @@ delete user.accountBalance;
 
 // 2 присвоєння undefined
 user.age = undefined;
+
+
+const video1 = {
+  title: 'Titan submarine is ...',
+  views: 123576896456,
+  author: 'BBC News'
+}
+
+const video2 = {
+  title: 'Title 2',
+  views: 123,
+  author: 'Test User'
+}
+
+const video3 = {
+  title: 'Title 3',
+  views: 123576456,
+  author: 'Test User 2'
+}
+
+const video4 = {
+  title: 'Titan submarine is ...',
+  views: 123576896456,
+  author: 'BBC News'
+}
+
+const video5 = {
+  title: 'Title 5',
+  views: 12396456,
+  author: 'Test User 5'
+}
