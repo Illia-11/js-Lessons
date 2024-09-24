@@ -30,6 +30,9 @@ const user = {
   password: 184394,
   eating: function() {
     alert('I am eating');
+  },
+  whatIsName: function() {
+    return this.name + " " + this.lastName;
   }
 }
 
@@ -106,8 +109,8 @@ const testObj = {
     console.log(this.key1);
   }
 }
-
 testObj.test();
+
 
 // зчитування об'єктів (Read)
 console.log(user);
