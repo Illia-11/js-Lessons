@@ -80,6 +80,13 @@ const cat = {
 };
 console.log(cat);
 
+function funcTest(userObj) {
+  return "Hello, " + userObj.name + " " + userObj.lastName;
+}
+const greeting1 = funcTest(user);
+console.log(greeting1);
+
+
 // зчитування об'єктів (Read)
 console.log(user);
 // alert(user); // приводить об'єкт до рядка, що зазвичай є проблемою
