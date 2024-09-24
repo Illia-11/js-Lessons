@@ -1,5 +1,5 @@
 // Об'єкти
-
+"use strict"
 // приклад даних користувача
 // ПОГАНО
 const user1Name = 'testUser';
