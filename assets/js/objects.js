@@ -45,13 +45,24 @@ const citramon = {
 const phone = {
   brand: 'Apple',
   model: '12 Pro',
-  price: 657,
+  // cpu: {
+  //   brand: 'Qualcom',
+  //   model: 'Snapdragon 860',
+  //   frequency: 1234,
+  // },
+  price: {
+    currency: 'UAH',
+    amount: 123,
+  },
   isOn: false,
   color: 'Pacific Blue',
   callSmb: function() {
     alert('дзвонимо комусь. Тут будуть гудки');
   }
 };
+
+console.log(phone.cpu); // undefined
+// console.log(phone.price.model); // error
 
 // створення об'єктів (Create)
 const obj1 = {}; // найчастіше, літерал
@@ -69,7 +80,6 @@ const cat = {
 };
 console.log(cat);
 
-
 // зчитування об'єктів (Read)
 console.log(user);
 // alert(user); // приводить об'єкт до рядка, що зазвичай є проблемою
@@ -78,7 +88,6 @@ console.log(user + '');
 // отримання даних з об'єкта
 // назваОб'єкта.назваВластивості
 console.log(user.mail);
-
 
 // оновлення значень (Update)
 
@@ -101,7 +110,6 @@ console.log(user.age);
 
 user.accountBalance = 34635;
 console.log(user);
-
 
 // видалення значень об'єкта (Delete)
 
