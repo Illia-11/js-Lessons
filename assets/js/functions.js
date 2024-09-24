@@ -89,3 +89,21 @@ console.log('Result2 is: ' + result2);
 
 // console.log(consoleLogRes);
 // console.log(alertRes);
+
+
+// func1(); // error
+
+func2(); // result 2
+
+const func1 = function(param1) {
+  return 'result 1';
+}
+
+// function decoration (об'явлення функції)
+function func2(param1) {
+  return 'result 2';
+}
+
+func1(); // result 1
+
+func2(); // result 2
