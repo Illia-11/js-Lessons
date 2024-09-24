@@ -155,29 +155,78 @@ user.age = undefined;
 const video1 = {
   title: 'Titan submarine is ...',
   views: 123576896456,
-  author: 'BBC News'
+  author: 'BBC News',
+  addView: function() {
+    this.views++;
+  }
 }
 
 const video2 = {
   title: 'Title 2',
   views: 123,
-  author: 'Test User'
+  author: 'Test User',
+  addView: function() {
+    this.views++;
+  }
 }
 
 const video3 = {
   title: 'Title 3',
   views: 123576456,
-  author: 'Test User 2'
+  author: 'Test User 2',
+  addView: function() {
+    this.views++;
+  }
 }
 
 const video4 = {
   title: 'Titan submarine is ...',
   views: 123576896456,
-  author: 'BBC News'
+  author: 'BBC News',
+  addView: function() {
+    this.views++;
+  }
 }
 
 const video5 = {
   title: 'Title 5',
   views: 12396456,
-  author: 'Test User 5'
+  author: 'Test User 5',
+  addView: function() {
+    this.views++;
+  }
 }
+
+// Функції - конструктори
+// створюють об'єкти з певною структурою
+// function createVideoObject(title, views, author) {
+function Video(title, views, author) {
+  // const newVideoObject = {};
+
+  // newVideoObject.title = title;
+  // newVideoObject.views = views;
+  // newVideoObject.author = author;
+  // newVideoObject.addView = function () {
+  //   this.views++;
+  // };
+  
+  // return newVideoObject;
+
+
+  // this - для функції запущених з new - пустий об'єкт завжди
+  // також повертається навіть, якщо не писати return
+
+  this.title = title;
+  this.views = views;
+  this.author = author;
+  this.addView = function() {
+    this.views++;
+  }
+}
+
+const video6 = Video('Funny cats video', 574829365, 'Me');
+// перевод функції в режим конструктора
+// this в цьому режимі буде постум об'єктом, з яким можна працювати
+// завжди повертає об'єкт 
+// якщо в тілі функці повертається не об'єкт, то воно повертає об'єкт this
+const video7 = new Video('Funny cats video 2.0', 5748, 'Me');
