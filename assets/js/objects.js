@@ -87,6 +87,28 @@ const greeting1 = funcTest(user);
 console.log(greeting1);
 
 
+function test1() {
+  // this - контекст виконання функції (хто її запускає)
+  console.log(this);  // об'єкт Window (стандартно) || undefined (суворий режим)
+}
+
+// test1();
+
+const testObj = {
+  key1: 'value1',
+  key2: 12345,
+  key3: false,
+  test: function() {
+      // this у методах об'єктів напряму надає доступ до об'єкту
+      // (той, хто іде до останньої крапочки)
+    console.log(this);
+    // console.log(testObj.key1);
+    console.log(this.key1);
+  }
+}
+
+testObj.test();
+
 // зчитування об'єктів (Read)
 console.log(user);
 // alert(user); // приводить об'єкт до рядка, що зазвичай є проблемою
