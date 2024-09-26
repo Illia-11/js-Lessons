@@ -66,3 +66,11 @@ arr5.push('first');
 arr5.push('one', 2, false, NaN, {});
 
 const newArr5Lenght = arr5.push(12); // повертає довжину масиву після вставки
+
+// видалення останнього елемента масиву
+const deleteValue = arr5.pop();
+
+const emptyArr = [];
+emptyArr.pop();
+const popRes = emptyArr.pop(); 
+console.log(popRes); // undefined
