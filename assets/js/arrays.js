@@ -31,3 +31,25 @@ console.log(vipEmails);
 console.log(vipEmails.length); // 4 (довжина масива)
 
 console.log(vipEmails[2]); // елемент з індексом 2
+
+// створення масивів
+
+// 1. Через конструктор
+const arr1 = new Array(); // пустий масив
+
+const arr2 = new Array(50, 515, 342, 632, 9876); // масив з якимись елементами
+
+const arr3 = new Array(5); // пустий масив з певною довжиною (довжина вказується у дужках)
+
+// task 1
+// const arr4 = new Array('Illia', 'Petro', "Aleks");
+// console.log(arr4);
+
+// 2. Через літерал
+const arr4 = []; // пустий масив
+
+const arr5 = [50, 515, 342, 632, 9876]; // масив з якимись елементами
+
+// task 2
+// const arr6 = ['Melon', 'Water', 'Cake'];
+// console.log(arr6);
