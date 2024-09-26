@@ -42,8 +42,8 @@ const arr2 = new Array(50, 515, 342, 632, 9876); // масив з якимись
 const arr3 = new Array(5); // пустий масив з певною довжиною (довжина вказується у дужках)
 
 // task 1
-// const arr4 = new Array('Illia', 'Petro', "Aleks");
-// console.log(arr4);
+const arrName = new Array('Illia', 'Petro', "Aleks");
+console.log(arrName);
 
 // 2. Через літерал
 const arr4 = []; // пустий масив
@@ -51,8 +51,8 @@ const arr4 = []; // пустий масив
 const arr5 = [50, 515, 342, 632, 9876]; // масив з якимись елементами
 
 // task 2
-// const arr6 = ['Melon', 'Water', 'Cake'];
-// console.log(arr6);
+// const arrFood = ['Melon', 'Water', 'Cake'];
+// console.log(arrFood);
 
 console.log(arr5[2]);
 
@@ -74,3 +74,10 @@ const emptyArr = [];
 emptyArr.pop();
 const popRes = emptyArr.pop(); 
 console.log(popRes); // undefined
+
+// task 3
+// arrName.push('Anna');
+// arrName.push('Denis', 'Ludmila', 'Nikolay', 'Papapa');
+// console.log(arrName);
+// console.log(arrName.pop());
+// console.log(arrName);
