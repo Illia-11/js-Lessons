@@ -224,9 +224,48 @@ function Video(title, views, author) {
   }
 }
 
-const video6 = Video('Funny cats video', 574829365, 'Me');
+const video6 = new Video('Funny cats video', 574829365, 'Me');
 // перевод функції в режим конструктора
 // this в цьому режимі буде постум об'єктом, з яким можна працювати
 // завжди повертає об'єкт 
 // якщо в тілі функці повертається не об'єкт, то воно повертає об'єкт this
 const video7 = new Video('Funny cats video 2.0', 5748, 'Me');
+
+// особливості роботи з ключами
+// 
+
+const testObject = {
+  key: 'value',
+  'key 1': 'test 1',
+  3: 'value 3',
+  'obj 1': {
+    3: 'some text',
+    2: null,
+    1: true
+  }
+};
+console.log(testObject.key);
+
+// оператор доступу до властивості об'єкта з обчисленням
+/*
+  obj[key]
+*/
+
+console.log(testObject['key 1']); // test 1
+console.log(testObject['key']); // value
+console.log(testObject[3]); // value 3
+console.log(testObject['3']); // value 3
+
+// const userInput = prompt('Enter some phone key ');
+const userInput = 'brand';
+
+console.log(phone[userInput]);
+console.log(testObject['obj 1'][3]);
+console.log(phone.price['currency']);
+
+const key = prompt('Enter key');
+const value = prompt('Enter value');
+
+testObject[key] = value;
+
+console.log(testObject);
