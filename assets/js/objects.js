@@ -263,9 +263,53 @@ console.log(phone[userInput]);
 console.log(testObject['obj 1'][3]);
 console.log(phone.price['currency']);
 
-const key = prompt('Enter key');
-const value = prompt('Enter value');
+// const key = prompt('Enter key');
+// const value = prompt('Enter value');
 
-testObject[key] = value;
+// testObject[key] = value;
 
 console.log(testObject);
+
+// console.log(testObject[key], testObject['obj 1'], phone.isOn);
+
+
+// особливості порівняння об'єктів у JS
+
+const testStr1 = 'test string';
+const testStr2 = 'test string';
+const testStr3 = 'teststring';
+
+console.log(testStr1 === testStr2); // true
+console.log(testStr1 === testStr3); // false
+
+const testObj1 = {
+  firstName: 'John'
+};
+
+const testObj2 = {
+  firstName: 'Jame'
+};
+
+const testObj3 = {
+  firstName: 'Jame'
+};
+
+console.log(testObj1 === testObj2); // false
+console.log(testObj3 === testObj2); // false
+console.log(testObj1 === testObj1); // true
+
+const testObj4 = testObj2;
+console.log(testObj4 === testObj2); // true
+
+testObj4.lastName = 'Test';
+console.log(testObj4);
+console.log(testObj2);
+
+function changeObject(obj) {
+
+  obj.newProperty = 'we changed object';
+
+  return obj;
+};
+
+const testObj5 = changeObject(testObj4);
