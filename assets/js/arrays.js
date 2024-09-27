@@ -112,3 +112,20 @@ arr5.shift();
 console.log(arr5);
 arr5.splice(3, 1, 'splice sent me');
 console.log(arr5);
+
+// копіювання частини масиву у новий масив
+/*
+  перший параметр - вказує початковий індекс
+  другий параметр - вказує перед яким індексом треба зупинитися
+*/
+const copy1 = arr5.slice(3, 7);
+
+const copy2 = arr5.slice(); // повна копія масиву
+
+const copy3 = arr5.slice(3); // копіює від 3 індексу до кінця
+
+const copy4 = arr5.slice(-4, -2); // негативні індекси теж працюють
+
+const copy6 = arr5.slice(1, 5);
+
+copy6[1].newProp = 'wifi';
