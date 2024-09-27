@@ -26,6 +26,10 @@ const vipEmails = new Array(
   'bvjkdslb@hotmail.com'
 );
 
+// перевірка чи є об'єкт масивом
+const isVipEmailsArray = Array.isArray(vipEmails); // true
+console.log(isVipEmailsArray);
+
 console.log(typeof vipEmails); // object
 console.log(vipEmails);
 console.log(vipEmails.length); // 4 (довжина масива)
@@ -82,6 +86,15 @@ console.log(popRes); // undefined
 // console.log(arrName.pop());
 // console.log(arrName);
 
-// перевірка чи є об'єкт масивом
-const isVipEmailsArray = Array.isArray(vipEmails); // true
-console.log(isVipEmailsArray);
+// додавання елементів у початок списку
+arr5.unshift({
+  test: true
+});
+
+console.log(arr5);
+
+// task 4
+// arrName.unshift('John', 'Joshua');
+
+// видалення першого елемента масиву
+arr5.shift();
