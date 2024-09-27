@@ -81,3 +81,7 @@ console.log(popRes); // undefined
 // console.log(arrName);
 // console.log(arrName.pop());
 // console.log(arrName);
+
+// перевірка чи є об'єкт масивом
+const isVipEmailsArray = Array.isArray(vipEmails); // true
+console.log(isVipEmailsArray);
