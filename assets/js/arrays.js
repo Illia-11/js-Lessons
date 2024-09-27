@@ -152,3 +152,16 @@ const name1 = ['BLA', 'BVJFSK', 'BVHFKANHIR'];
 
 const isBLAInArray = name1.includes('BLA'); // true
 const isDghfdInArray = name1.includes('Dghfd'); // false
+
+// flat 
+// створює масив, всередині якого, розрівнює вкладені масиви на вказану кількість рівнів
+const onionArr = [
+  'first', 
+  'second', 
+  [1, 2, 3, 4, 5], 
+  'fourth', 
+  [true, false, ['blaalbblaalb'], true]
+];
+console.log(onionArr[4][3][0]);
+
+const flated1 = onionArr.flat(1);
