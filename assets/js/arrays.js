@@ -146,3 +146,9 @@ const stringFromArr2 = joinTest.join(' ');
 const reverseArr = [100, 5000, -1.2, 156];
 
 console.log(reverseArr.reverse());
+
+// includes - перевіряє наявність яогось елементу в масиві
+const name1 = ['BLA', 'BVJFSK', 'BVHFKANHIR'];
+
+const isBLAInArray = name1.includes('BLA'); // true
+const isDghfdInArray = name1.includes('Dghfd'); // false
