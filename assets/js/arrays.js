@@ -190,6 +190,7 @@ const nums3 = nums1.concat(100, 200, 300, [56478, 1623894, [102210]]);
     flat
     includes
     join
+    map
 */ 
 
 /*
@@ -236,6 +237,7 @@ forEachTestArray.forEach(function (number, i, array) {
   console.log(array);
 });
 
+
 // task for forEach
 // const forEachTask = ['true', 'bla', true, 134];
 // forEachTask.forEach(function (name, index, array) {
@@ -244,3 +246,24 @@ forEachTestArray.forEach(function (number, i, array) {
 //   console.log(array);
 // });
 
+
+// map - на основі результатів роботи коллбек функції та старого масиву, створює новий масив
+
+const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
+
+// const newArray = [];
+// numbers.forEach(function (number) {
+//   newArray.push(number * number);
+// });
+// console.log(newArray); // числа в квадраті
+
+const squareNumbers = numbers.map(function (number, i) {
+  // конкретний результат роботи коллбеку, буде кластися у новий масив на поточний індекс, на якому зараз знаходиться обхід
+  console.log(number ** 2);
+  console.log(i);
+  return 'test';
+});
+
+console.log(squareNumbers);
+
+// 
