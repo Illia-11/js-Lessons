@@ -281,3 +281,32 @@ const oddNumbers = numbers.filter(function (number) {
   return number % 2 !== 0;
 });
 console.log(oddNumbers);
+
+// some - повертає правду, якщо хоч один з елементів масиву пройшов перевірку у коллбеці (коллбек повернува правду), інакше повертає прехню
+
+const numbers2 = [1, 3, 2.5, 7, 9.99, 10, 5];
+
+const isThereEvenNumbers = numbers2.some(function (number) {
+  // if(number % 2 === 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // };
+
+  return number % 2 === 0;
+});
+
+console.log(isThereEvenNumbers);
+
+// every - повертає правду, якщо всі елементи масиву пройшли перевірку у коллбеці (коллбек повернува правду), інакше повертає прехню
+
+const isThereOddNumber = numbers2.every(function (number) {
+    // if(number % 2 !== 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // };
+  return number % 2 !== 0;
+});
+
+console.log(isThereOddNumber);
