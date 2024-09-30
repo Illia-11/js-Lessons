@@ -191,6 +191,7 @@ const nums3 = nums1.concat(100, 200, 300, [56478, 1623894, [102210]]);
     includes
     join
     map
+    filter
 */ 
 
 /*
@@ -266,4 +267,17 @@ const squareNumbers = numbers.map(function (number, i) {
 
 console.log(squareNumbers);
 
-// 
+// filter - створює новий масив та заповнює його елементами, які пройшли перевірку (повернули правдиве значення) при виклику для них коллбек
+
+const oddNumbers = numbers.filter(function (number) {
+  // if (number % 2 !== 0) {
+  //   // елемент опиниться у новому масиві
+  //   return true;
+  // } else {
+  //   // елемента не буде у новому масиві
+  //   return false;
+  // };
+
+  return number % 2 !== 0;
+});
+console.log(oddNumbers);
