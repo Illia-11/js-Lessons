@@ -1,4 +1,4 @@
-// Масиви (arrays) - структури ланих для збереження великої кількості (зазвичай) однотипних даних
+// Масиви (arrays) - структури даних для збереження великої кількості (зазвичай) однотипних даних
 
 // const vipEmail1 = 'vjkflds@gmail.com';
 // const vipEmail2 = 'mhtvfds@hotmail.com';
@@ -191,3 +191,56 @@ const nums3 = nums1.concat(100, 200, 300, [56478, 1623894, [102210]]);
     includes
     join
 */ 
+
+/*
+  методи обходу масиву
+
+    завжди обходять масив з початку до кінця
+    кожен з методів обходу буде приймати спеціальну функцію, яку називають 
+      callback (функція зворотнього виклику)
+*/
+
+// function printSomeData (printFunction, dataToPrint) {
+//   printFunction(dataToPrint);
+// }
+
+// printSomeData(alert, 'test');
+// printSomeData(console.log, 'test');
+
+// forEach - виконує функцію-колбек для кожного елемента у масиві
+/*
+  function callback (currentValue, index, array) {
+    currentValue - поточний елемент масиву
+    index - індекс поточного елементу масива
+    array - посиланн на масив, по якому робимо обхід
+  }
+*/
+
+const forEachTestArray = [100, 200, 300, 400];
+
+// function forEachCallbackExample (currentValue, index, array) {
+//   console.log('current value is: ');
+//   console.log(currentValue);
+//   console.log('index value is: ');
+//   console.log(index);
+//   console.log('array value is: ');
+//   console.log(array);
+//   // console.log(array === forEachTestArray); // true
+// };
+
+// forEachTestArray.forEach(forEachCallbackExample);
+
+forEachTestArray.forEach(function (number, i, array) {
+  console.log(number);
+  console.log(i);
+  console.log(array);
+});
+
+// task for forEach
+// const forEachTask = ['true', 'bla', true, 134];
+// forEachTask.forEach(function (name, index, array) {
+//   console.log(name);
+//   console.log(index);
+//   console.log(array);
+// });
+
