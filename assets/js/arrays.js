@@ -310,3 +310,36 @@ const isThereOddNumber = numbers2.every(function (number) {
 });
 
 console.log(isThereOddNumber);
+
+// find - повертає перший елемент, який пройшов перевірку з коллбеку
+// якщо кожен елемент не пройде перевірку - повертає undefined
+
+const numbers3 = [6, 7, 8, -9, 10, 12, -5, 12.5, -23454.234];
+
+const getNumberLessThanZero = numbers3.find(function (number) {
+  // if(number < 0) {
+  //   return true;
+  // } else {
+  //   return false;
+  // };
+  return number < 0;
+});
+
+console.log(getNumberLessThanZero);
+
+// findindex - повертає перший індекс елементу, який пройшов перевірку з коллбеку
+// якщо кожен елемент не пройде перевірку - повертає -1
+
+const names = ['Oksana', 'Artem', 'Petro', 'Lionel'];
+
+const oksanaIndex = names.findIndex(function (name) {
+  return name === 'Oksana';
+});
+
+const joneIndex = names.findIndex(function (name) {
+  return name === 'Jone';
+});
+
+console.log(oksanaIndex);
+
+console.log(joneIndex);
