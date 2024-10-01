@@ -395,14 +395,26 @@ const dog = {
   name: 'Bobik'
 };
 
-const animal = {
-  sleepImitation: function() {
+const parrot = {
+  name: 'Kesha'
+};
+
+const animalPrototype = {
+  sleep: function() {
     console.log(this.name + ' is sleeping');
   }
 };
 
-hamster.__proto__ = animal;
-dog.__proto__ = animal;
+const birdPrototype = {
+  fly: function() {
+    console.log(this.name + ' is flying');
+  }
+};
 
-dog.sleepImitation();
-hamster.sleepImitation();
+hamster.__proto__ = animalPrototype;
+dog.__proto__ = animalPrototype;
+parrot.__proto__ = birdPrototype;
+birdPrototype.__proto__ = animalPrototype;
+
+dog.sleep();
+hamster.sleep();
