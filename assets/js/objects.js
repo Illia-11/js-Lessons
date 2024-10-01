@@ -379,3 +379,21 @@ message2.__proto__ = messagePrototype;
 console.log(message2.removeDislike === message1.removeDislike); // true
 console.log(message1.__proto__ === message2.__proto__); // true
 message1.removeDislike();
+
+// task 1
+// const hamster = {
+//   name: 'Bob'
+// };
+
+// const dog = {
+//   name: 'Bobik'
+// };
+
+// const animal = {
+//   sleepImitation: function() {
+//     console.log('Sleep...');
+//   }
+// };
+
+// hamster.__proto__ = animal;
+// dog.__proto__ = animal;
