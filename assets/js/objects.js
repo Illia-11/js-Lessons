@@ -368,6 +368,8 @@ const messagePrototype = {
     console.log('dislike removed');
   },
   test: function() {
+    console.log('this value is: ');
+    console.log(this);
     return 10;
   }
 };
@@ -376,24 +378,31 @@ const messagePrototype = {
 message1.__proto__ = messagePrototype;
 message2.__proto__ = messagePrototype;
 
-console.log(message2.removeDislike === message1.removeDislike); // true
-console.log(message1.__proto__ === message2.__proto__); // true
-message1.removeDislike();
+message1.test();
+message2.test();
+// messagePrototype.test();
+
+// console.log(message2.removeDislike === message1.removeDislike); // true
+// console.log(message1.__proto__ === message2.__proto__); // true
+// message1.removeDislike();
 
 // task 1
-// const hamster = {
-//   name: 'Bob'
-// };
+const hamster = {
+  name: 'Bob'
+};
 
-// const dog = {
-//   name: 'Bobik'
-// };
+const dog = {
+  name: 'Bobik'
+};
 
-// const animal = {
-//   sleepImitation: function() {
-//     console.log('Sleep...');
-//   }
-// };
+const animal = {
+  sleepImitation: function() {
+    console.log(this.name + ' is sleeping');
+  }
+};
 
-// hamster.__proto__ = animal;
-// dog.__proto__ = animal;
+hamster.__proto__ = animal;
+dog.__proto__ = animal;
+
+dog.sleepImitation();
+hamster.sleepImitation();
