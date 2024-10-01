@@ -314,3 +314,68 @@ function changeObject(obj) {
 
 const testObj5 = changeObject(testObj4);
 
+
+const message1 = {
+  messageText: 'Lorem Ipsum',
+  author: 'User',
+  id: 0,
+  likes: 0,
+  dislikes: 0,
+  addLike: function() {
+    this.likes++;
+  },
+  addDislike: function() {
+    this.dislike++;
+  },
+  removeLike: function() {
+    this.likes--;
+  }
+};
+
+const message2 = {
+  messageText: 'blablabla',
+  author: 'User 2',
+  id: 1,
+  likes: 12,
+  dislikes: 1,
+  addLike: function() {
+    this.likes++;
+  },
+  addDislike: function() {
+    this.dislike++;
+  },
+  removeLike: function() {
+    this.likes--;
+  }
+};
+
+// console.log(message1.addDislike === message2.addDislike); // false
+
+// const arr1 = [];
+// const arr2 = [null];
+
+// console.log(arr1.push === arr2.push); // true
+
+
+// Прототипи
+
+/*
+  це спеціальний обʼєкт, який зберігає певні властивості та методи, які мають бути спільними для моїх обʼєктів
+*/
+
+const messagePrototype = {
+  removeDislike: function() {
+    console.log('dislike removed');
+  },
+  test: function() {
+    return 10;
+  }
+};
+
+// додає прототип обʼєкту
+message1.__proto__ = messagePrototype;
+message2.__proto__ = messagePrototype;
+
+console.log(message2.removeDislike === message1.removeDislike); // true
+console.log(message1.__proto__ === message2.__proto__); // true
+message1.removeDislike();
