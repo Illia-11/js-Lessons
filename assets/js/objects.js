@@ -367,6 +367,12 @@ const messagePrototype = {
   removeDislike: function() {
     console.log('dislike removed');
   },
+  addLike: function() {
+    this.likes++;
+  },
+  addDislike: function() {
+    this.dislike++;
+  },
   test: function() {
     console.log('this value is: ');
     console.log(this);
@@ -416,5 +422,25 @@ dog.__proto__ = animalPrototype;
 parrot.__proto__ = birdPrototype;
 birdPrototype.__proto__ = animalPrototype;
 
-dog.sleep();
-hamster.sleep();
+// dog.sleep();
+// hamster.sleep();
+
+
+let currentId = 0;
+
+function Message (author, messageText) {
+  this.id = currentId++;
+  this.author = author;
+  this.messageText = messageText;
+  this.likes = 0;
+  this.dislikes = 0;
+
+  // технічно працює, але можна по іншому для конструкторів
+  // this.__proto__ = messagePrototype;
+};
+
+// задавання прототипу для функції-конструктора
+Message.prototype = messagePrototype;
+
+const msg1 = new Message('Anonumous', 'Hell, world');
+const msg2 = new Message('User', 'Lorem Ipsum');
