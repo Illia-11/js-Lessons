@@ -25,10 +25,32 @@ console.log(arr1);
 //   console.log(2);
 // };
 
-const bool2 = new Boolean(false);
+// const bool2 = new Boolean(false);
 
-if(bool2) {
-  console.log(1);
-} else {
-  console.log(2);
-};
+// if(bool2) {
+//   console.log(1);
+// } else {
+//   console.log(2);
+// };
+
+// Використання функцій Boolean, String, Number
+const test1 = Number(10);
+console.log(test1);
+
+const test2 = Number('10');
+console.log(test2);
+
+// +data
+const test3 = Number('bvhjkbvjdkc');
+console.log(test3);
+
+// console.log(+'bvhjkbvjdkc');
+
+// !!data
+const bool1 = Boolean({
+});
+console.log(bool1);
+
+// '' + data
+const str3 = String(null);
+console.log(str3);
