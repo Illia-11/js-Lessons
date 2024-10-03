@@ -30,7 +30,7 @@ try {
   // блок коду, який виконається якщо  у блоці try відбулася помилка
   console.log('error is');
 
-  console.dir(err);
+  // console.dir(err);
 
   if(err.message === 'Приклад опису помилки') {
     console.log('обробив помилку');
@@ -53,3 +53,26 @@ console.log('Код виконано повністю');
 //   console.log(err);
 // }
 // console.log('Код закінчився');
+
+function getSumOfTwoNumbers (num1, num2) {
+
+  if(typeof num1 !== 'number' || isNaN(num1)) {
+    throw new TypeError('num1 має бути корректним числом');
+  };
+
+  if(typeof num2 !== 'number' || isNaN(num2)) {
+    throw new TypeError('num2 має бути корректним числом');
+  };
+
+  return num1 + num2;
+};
+
+try {
+const res = getSumOfTwoNumbers('2',3);
+
+console.log(res);
+} catch (err){
+  console.log(err.message);
+}
+
+console.log('Код закінчився');
