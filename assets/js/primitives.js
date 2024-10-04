@@ -97,3 +97,14 @@ console.log(Math.random()); // 0 - 0.999999999999
 function getRandomArbitrary(min, max) {
   return Math.random() * (max - min) + min;
 }
+
+
+// Методи примітивів
+
+console.log(true);
+console.log(true.toString());
+
+const boolValue = true;
+
+console.log(true.toString());
+console.log(boolValue.toString());
