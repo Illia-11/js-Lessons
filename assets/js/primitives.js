@@ -157,3 +157,9 @@ const sliceStr1 = str.slice(2, -4); // "is is test st"
 // trim - створює новий рядок, в якому пробіли з початку та кінця видаляються
 const untrimmedStr = '      ';
 const trimmedStr = untrimmedStr.trim();
+
+// toLowerCase / toUpperCase - створює новий рядок, який буде повністю в нижньому / верхньому регістрі
+const str4 = 'Test StRIng';
+const lowerCase = str4.toLowerCase(); // "test string"
+
+const upperCase = str4.toUpperCase(); // "TEST STRING"
