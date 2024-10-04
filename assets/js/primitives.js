@@ -154,3 +154,6 @@ const indexOfStr3 = str.indexOf('t', 9); // 11
 const sliceStr = str.slice(2, 13); // "is is test "
 const sliceStr1 = str.slice(2, -4); // "is is test st"
 
+// trim - створює новий рядок, в якому пробіли з початку та кінця видаляються
+const untrimmedStr = '      ';
+const trimmedStr = untrimmedStr.trim();
