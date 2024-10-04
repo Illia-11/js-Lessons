@@ -160,6 +160,22 @@ const trimmedStr = untrimmedStr.trim();
 
 // toLowerCase / toUpperCase - створює новий рядок, який буде повністю в нижньому / верхньому регістрі
 const str4 = 'Test StRIng';
+
 const lowerCase = str4.toLowerCase(); // "test string"
 
 const upperCase = str4.toUpperCase(); // "TEST STRING"
+
+// replace - створює новий рядок, в якому заміщує перше входження одного рядка іншим
+const replace1 = str4.replace('est', 'EST 123'); // "TEST 123 StRIng"
+const replace2 = str4.replace('t', 'EST 123'); // "TesEST 123 StRIng"
+
+// split - на основі рядка створює масив рядків
+// в якості аргумента приймає рядок, який буде використовувати для розділення тексту у початкому рядку
+const arr2 = str4.split(); // ["Test StRIng"]
+const arr3 = str4.split(' '); // ["Test", "StRIng"]
+const arr4 = str4.split('t'); // ["Tes", " S", "RIng"]
+const arr5 = str4.split(''); 
+
+arr5[2] = 'S';
+
+const str5 = arr5.join(' ');
