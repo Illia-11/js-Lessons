@@ -190,3 +190,14 @@ const str5 = arr5.join(' ');
 const someText = "\u0004\t\t\tЯкийсь текст ... \n`Тут` могло бути ваше \\ ім'я але \nє \"невеликий\" нюанс";
 
 console.log(someText);
+
+
+// task 1
+const a = 1;
+const b = 2;
+// alert(a + ' * ' + b + ' = ' + a * b);
+// alert(a + ' + ' + b + ' = ' + (a + b));
+// alert(a + ' - ' + b + ' = ' + (a - b));
+// alert(a + ' / ' + b + ' = ' + a / b);
+
+
