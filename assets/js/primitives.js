@@ -193,11 +193,30 @@ console.log(someText);
 
 
 // task 1
-const a = 1;
+const a = 3;
 const b = 2;
 // alert(a + ' * ' + b + ' = ' + a * b);
 // alert(a + ' + ' + b + ' = ' + (a + b));
 // alert(a + ' - ' + b + ' = ' + (a - b));
 // alert(a + ' / ' + b + ' = ' + a / b);
 
+// alert(`${a} * ${b} = ${a * b}`);
+// alert(`${a} + ${b} = ${a + b}`);
+// alert(`${a} - ${b} = ${a - b}`);
+// alert(`${a} / ${b} = ${a / b}`);
+// alert(`${a} ** ${b} = ${Math.pow(5, 2)}`);
+
+
+// шаблонний рядок
+const templateString = `якийсь текст
+  тут щось інше`;
+console.log(templateString);
+
+const obj = {
+  someText: `рядок1
+  рядок2`
+};
+
+const templateStringWithVariable = `Значення змінної а дорівнює ${a}`;
+console.log(templateStringWithVariable);
 
