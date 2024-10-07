@@ -176,3 +176,5 @@ function hofExample2 () {
 };
 
 const result = hofExample2();
+
+result();
