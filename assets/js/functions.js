@@ -1,5 +1,7 @@
 // Функції - блоки коду які можна повтороно використовувати
 
+'use strict';
+
 /* 
   Параметри функції - речі які передаємо всередину як додаткову інформацію
 */
@@ -195,7 +197,7 @@ console.log(hello2);
 /**
  * функція, яка приймає рядок та повертає його варіант, де кожна літера випадково буде у верхньому або нижньому регістрі
  * @param {string} str - рядок, який буде перетворено
- * @returns {string} 
+ * @returns {string}
  */
 function toRandomCase (str) {
   let resultString = '';
@@ -235,3 +237,131 @@ function toRandomCase2 (str) {
 
 const str1 = toRandomCase('test');
 const str2 = toRandomCase();
+
+/**
+ * @param {number} num1
+ * @param {number} num2
+ * @returns {number}
+ */
+function declarationSum (num1, num2) {
+  return num1 + num2;
+};
+
+/**
+ * @param {number} num1
+ * @param {number} num2
+ * @returns {number}
+ */
+const expressionSum = function (num1, num2) {
+  return num1 + num2;
+};
+
+arrowSum();
+
+// arrow function (функції - стрілки)
+
+/**
+ * @param {number} num1
+ * @param {number} num2
+ * @returns {number}
+ */
+const arrowSum = (num1 = 2, num2 = 3) => {
+  return num1 + num2;
+};
+
+// 1. У них існує скорочена версія
+const arrowSumCompact = (num1 = 1, num2 = 4) => num1 + num2;
+
+const arr = ['test', 123, null, true, 'some', NaN];
+
+const numbers01 = arr.filter(function(elem) {
+  return typeof elem === 'number';
+});
+
+const numbers02 = arr.filter((elem) => typeof elem === 'number');
+
+// 1.5 особливості запису дужок параметрів
+const arrow1 = param => console.log(param);
+
+// const arrow2 = (param, param2) => console.log(param); // error
+
+// const arrow3 =  => console.log(param); // error
+
+// 2. Відсутній arguments
+function test0 () {
+  console.log(this);
+  // console.log(arguments); // обʼєкт
+};
+
+const arrowTest0 = () => {
+  console.log(this);
+  // console.log(arguments); // error
+};
+
+// 3. Не можуть використовуватися як конструктори
+// const obj1 = new declarationSum();
+
+// const obj2 = new arrowSum(); // error
+
+// 4. У стрілок відсутній власний this
+// стрілки беруть значення this з батьківського контексту виконання
+
+console.log(this); // Window
+
+const arrowThis = () => {
+  console.log(this); // Window
+};
+
+const eShopObject = {
+  name: 'eShop',
+  email: 'admin@eshop.com',
+  products: [
+    {name: 'Prod 1', price: 1000, amount: 5},
+    {name: 'Prod 2', price: 2000, amount: 6},
+    {name: 'Prod 3', price: 3000, amount: 7},
+    {name: 'Prod 4', price: 4000, amount: 8},
+    {name: 'Prod 5', price: 5000, amount: 9},
+  ],
+
+  logAllProduct: function() {
+    this.products.forEach(function(product) {
+      // Магазин еШоп продає на розетці товар з назвою Prod 1 і ціною 1000
+      // втрата контексту виконання this === undefined
+      console.log(`Магазин ${that.name} продає на Розетці наступний товар з назвою ${product.name} ш ціною ${product.price}`);
+    });
+  },
+
+  logAllProductFix: function() {
+    let that = this;
+
+    this.products.forEach(function(product) {
+      // Магазин еШоп продає на розетці товар з назвою Prod 1 і ціною 1000
+      // втрата контексту виконання this === undefined
+      console.log(`Магазин ${that.name} продає на Розетці наступний товар з назвою ${product.name} ш ціною ${product.price}`);
+    });
+  },
+
+  logAllProductFix2: function() {
+    const callbackWithBadThis = function(product) {
+      console.log(this);
+      // Магазин еШоп продає на розетці товар з назвою Prod 1 і ціною 1000
+      console.log(`Магазин ${this.name} продає на Розетці наступний товар з назвою ${product.name} ш ціною ${product.price}`);
+    };
+
+    const callback = callbackWithBadThis.bind('test');
+
+    this.products.forEach(callback);
+  },
+
+  logAllProductFix3: function() {
+    this.products.forEach((product) => {
+      // Магазин еШоп продає на розетці товар з назвою Prod 1 і ціною 1000
+      console.log(`Магазин ${this.name} продає на Розетці наступний товар з назвою ${product.name} ш ціною ${product.price}`);
+    });
+  },
+
+  testMethod: () => {
+    console.log(this); // Window
+  }
+
+};
