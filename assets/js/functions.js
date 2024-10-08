@@ -140,7 +140,7 @@ function badSum2 (num1, num2) {
 };
 
 // 
-function multiply (num1, num2) {
+function multiply (num1, num2 = 2) {
   console.log('test');
   return num1 * num2;
 };
@@ -178,3 +178,16 @@ function hofExample2 () {
 const result = hofExample2();
 
 result();
+
+
+// значення параметрів за замовчанням
+function sayHello (userName = 'Guest') {
+  return `Hello ${userName}`;
+};
+
+const hello1 = sayHello('Peter');
+console.log(hello1);
+
+const hello2 = sayHello();
+console.log(hello2);
+
