@@ -35,3 +35,42 @@ sum(10, 20, 30, 40, 2135, -214578, 0, false, null);
 // const arrow = () => {};
 
 // console.dir(arrow);
+
+// rest-оператор (оператор залишкових параметрів)
+
+/**
+ * Функція суми необмеженої кількость значень
+ * @param {number} num1 
+ * @param {number} num2 
+ * @param {...number} restParameters - масив аргументів-чисел починаючи з 3 аргументу
+ * @param {number[]} restParameters - масив аргументів-чисел починаючи з 3 аргументу
+ * @returns {number}
+ */
+const sumWithRestOperator = (num1, num2, ...restParameters) => {
+  let resultingSum = num1 + num2;
+
+  console.log(restParameters); // створює масив з інших значень параметрів
+
+  restParameters.forEach((restParameters) => {
+    resultingSum += restParameters;
+  });
+
+  return resultingSum;
+};
+
+console.log(sumWithRestOperator(1, 2, 3, 4, 5, 6, 7));
+
+
+const sumWithRestOperator2 = (...restParameters) => {
+  let resultingSum = 0;
+
+  console.log(restParameters); // створює масив з інших значень параметрів
+
+  restParameters.forEach((restParameters) => {
+    resultingSum += restParameters;
+  });
+
+  return resultingSum;
+};
+
+console.log(sumWithRestOperator(1, 2, 3, 4, 5, 6, 7));
