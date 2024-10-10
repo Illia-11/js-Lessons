@@ -36,7 +36,7 @@ sum(10, 20, 30, 40, 2135, -214578, 0, false, null);
 
 // console.dir(arrow);
 
-// rest-оператор (оператор залишкових параметрів)
+// rest - оператор (оператор залишкових параметрів)
 
 /**
  * Функція суми необмеженої кількость значень
@@ -74,3 +74,18 @@ const sumWithRestOperator2 = (...restParameters) => {
 };
 
 console.log(sumWithRestOperator(1, 2, 3, 4, 5, 6, 7));
+
+
+// spread - оператор (оператор розширення)
+
+const numbers = [20, 32, -3, 4, 0, 12.3, -123.5];
+
+const minNumber = Math.min(...numbers, 1000);
+console.log(minNumber);
+
+const nums1 = [2,4,6,8,10];
+const nums2 = [1,3,5,7,9];
+
+const allNums = [...nums2, 567849, ...nums1, -907643];
+
+const sumOfAllNums = sumWithRestOperator2(...allNums);
