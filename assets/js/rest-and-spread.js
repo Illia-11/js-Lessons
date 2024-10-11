@@ -73,6 +73,9 @@ const sumWithRestOperator2 = (...restParameters) => {
   return resultingSum;
 };
 
+
+const sum = (...restParameters) => restParameters.reduce((acc, num) => acc + num);
+
 console.log(sumWithRestOperator(1, 2, 3, 4, 5, 6, 7));
 
 

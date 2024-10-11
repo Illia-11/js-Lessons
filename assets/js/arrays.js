@@ -343,3 +343,18 @@ const joneIndex = names.findIndex(function (name) {
 console.log(oksanaIndex);
 
 console.log(joneIndex);
+
+// reduce - метод обходу масиву, якій на основі елементів масиву може отримати якесь одне значення 
+// на основі коллбек функції, яку називають редюсером
+
+const numbers4 = [100, 2, 3, 4, 5, 6, 7, 8, 9];
+
+// const result = numbers4.reduce((accumulator, number, index, array) => {
+//   console.log(accumulator);
+//   console.log(number);
+//   return `new accumulator ${accumulator}`;
+// });
+
+const numbers4TotalSum = numbers4.reduce((acc, num) => acc + num);
+
+const sum = (...restParameters) => restParameters.reduce((acc, num) => acc + num);
