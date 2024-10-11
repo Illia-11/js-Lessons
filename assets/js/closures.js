@@ -83,3 +83,22 @@ const returningObject = {
 
 const userIdHelper = createId();
 const productIdHelper = createId();
+
+
+// hometask
+function createMultiplier (x) {
+
+let firstNumber = x;
+
+  function multiply (y) {
+    return firstNumber *= y;
+  };
+
+  return multiply;
+};
+
+const multiply = createMultiplier(5);
+
+console.log(multiply(2));
+console.log(multiply(2));
+console.log(multiply(100));
