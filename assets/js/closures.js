@@ -86,19 +86,37 @@ const productIdHelper = createId();
 
 
 // hometask
-function createMultiplier (x) {
+// function createMultiplier (x) {
 
-let firstNumber = x;
+// let firstNumber = x;
 
-  function multiply (y) {
-    return firstNumber *= y;
-  };
+//   function multiply (y) {
+//     return firstNumber *= y;
+//   };
 
-  return multiply;
-};
+//   return multiply;
+// };
+
+
+// function createMultiplier (x) {
+//   let firstNumber = x;
+  
+//     return function (y) {
+//       return firstNumber *= y;
+//     };
+//   };
+
+
+// function createMultiplier (x) {
+//     return function (y) {
+//       return x *= y;
+//     };
+//   };
+
+
+const createMultiplier = (x) => (y) => x *= y;
 
 const multiply = createMultiplier(5);
-
 console.log(multiply(2));
 console.log(multiply(2));
 console.log(multiply(100));
