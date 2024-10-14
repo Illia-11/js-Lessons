@@ -21,6 +21,7 @@ function HousePrototype () {
   this.getFullHouseData = function() {
     return `This house address: ${this.address}, has ${this.floors} floors with ${this.apartmentPerFloor} on each floor. Each apartment costs ${this.priceOfApartment}`;
   }
+  this.id = NaN;
 }
 
 const housePrototype = new HousePrototype();
@@ -49,5 +50,34 @@ class House {
   };
 };
 
-const house3 = new House ();
-const house4 = new House (1, 2, 'addres1', 4000);;
+// const house3 = new House ();
+// const house4 = new House (1, 2, 'addres1', 4000);
+
+
+class newHouse {
+  // тіло класу
+  // весь код автоматично виконується у суворому режимі
+
+  // функція-конструктор, запускається при створення через new
+  // в класі може бути не більше одного constructor
+  constructor (floors = 1, apartmentPerFloor = 2, address = 'address2', priceOfApartment = 9000) {
+    this.floors = floors;
+    this.apartmentPerFloor = apartmentPerFloor;
+    this.address = address;
+    this.priceOfApartment = priceOfApartment;
+  };
+
+  // методи прототипу
+  getFullHouseInformation () {
+    return `This house address: ${this.address}, has ${this.floors} floors with ${this.apartmentPerFloor} on each floor. Each apartment costs ${this.priceOfApartment}`;
+  };
+
+  // властивість прототипу (спільна однакова властивість всіх будинків)
+  id = NaN;
+};
+
+const house3 = new newHouse ();
+const house4 = new newHouse (1, 2, 'addres1', 4000);
+
+// створення екземпляра без new завжди викликає помилку
+// const house5 = newHouse (1, 2, 'addres1', 4000); // Error
