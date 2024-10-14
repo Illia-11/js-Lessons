@@ -85,7 +85,38 @@ const house4 = new newHouse (1, 2, 'addres1', 4000);
 // class task
 
 class Product {
+  /**
+   * @constructor
+   * @param {string} name 
+   * @param {number} price 
+   * @param {number} amount 
+   * @param {boolean} isForAdult 
+   */
   constructor (name, price, amount, isForAdult) {
+    if(typeof name !== 'string' || name.trim().length === 0) {
+      throw new TypeError('Name of product must be string');
+    };
+
+    if(typeof price !== 'number' || isNaN(price)) {
+      throw new TypeError('Price of a product must be numeric');
+    }
+
+    if(price < 0) {
+      throw new RangeError('Price of a product must be positive');
+    }
+
+    if(typeof amount !== 'number' || isNaN(amount)) {
+      throw new TypeError('Amount of a product must be numeric');
+    }
+
+    if(amount < 0) {
+      throw new RangeError('Amount of a product must be positive');
+    }
+
+    if(typeof isForAdult !== 'boolean') {
+      throw new TypeError('Only true or false');
+    }
+
     this.name = name;
     this.price = price;
     this.amount = amount;
@@ -112,10 +143,13 @@ const owner1 = {
 
 // alert(`Загальна вартість всіх одиниць товару '${product1.name}' = ${product1.getPriceOfAllProduct()} грн`);
 
-// 
 // if(owner1.balance >= (product1.price * product1.amount)) {
 if(owner1.balance >= product1.getPriceOfAllProduct()) {
   console.log('Owner 1 can buy all ice cream');
 } else {
   console.log('Owner 1 can not buy all ice cream');
 };
+
+const product4 = new Product('name', 2, 2000, false);
+
+console.log(product4.getPriceOfAllProduct());
