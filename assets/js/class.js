@@ -117,17 +117,54 @@ class Product {
       throw new TypeError('Only true or false');
     }
 
-    this.name = name;
-    this.price = price;
-    this.amount = amount;
-    this.isForAdult = isForAdult;
+    // this.name = name;
+    // this.price = price;
+    // this.amount = amount;
+    // this.isForAdult = isForAdult;
+
+    // _ означає, що розробник не рекомендує лізти до цих властивостей
+    this._name = name; // цу вже використовується сеттер name
+    this._price = price;
+    this._amount = amount;
+    this._isForAdult = isForAdult;
+
+    this.setterTarget = null;
+  };
+    
+  // геттер - псевдовластивість, яка повертає яке значення
+  get test() {
+    return `some test value`;
+  };
+
+  // просто повертаємо значення службової властивості
+  get name () {
+    return this._name;
+  };
+
+  // сеттер (встановлювач) - створює якусь псевдовластивість при спробі записати яку змінюється якась інша властивість
+  set setterName (x) {
+    if(typeof x !== ' string') {
+      throw new TypeError('bad type');
+    }
+
+    this.setterTarget = x;
+  };
+
+  // встановлюємо нове значення для службової властивості
+  // product.name = 123456;
+  set name (newName) {
+    if(typeof newName !== 'string' || newName.trim().length === 0) {
+      throw new TypeError('Name of product must be string');
+    };
+
+    this._name = newName; // тут зʼвляється _name у обʼєкті продукта
   };
 
   getPriceOfAllProduct () {
     // return `Загальна вартість всіх одиниць товару '${this.name}' = ${this.price * this.amount} грн`; 
     // якщо треба повернути лише число або булеве значення - краще вказати тільки його
 
-    return this.price * this.amount;
+    return this._price * this._amount;
   };
 };
 
@@ -152,4 +189,7 @@ if(owner1.balance >= product1.getPriceOfAllProduct()) {
 
 const product4 = new Product('name', 2, 2000, false);
 
-console.log(product4.getPriceOfAllProduct());
+console.log(product4.getPriceOfAllProduct()); // 4000
+
+product4.amount = 'test';
+console.log(product4.getPriceOfAllProduct()); // 4000
