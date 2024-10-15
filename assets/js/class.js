@@ -93,30 +93,6 @@ class Product {
    * @param {boolean} isForAdult 
    */
   constructor (name, price, amount, isForAdult) {
-    if(typeof name !== 'string' || name.trim().length === 0) {
-      throw new TypeError('Name of product must be string');
-    };
-
-    if(typeof price !== 'number' || isNaN(price)) {
-      throw new TypeError('Price of a product must be numeric');
-    }
-
-    if(price < 0) {
-      throw new RangeError('Price of a product must be positive');
-    }
-
-    if(typeof amount !== 'number' || isNaN(amount)) {
-      throw new TypeError('Amount of a product must be numeric');
-    }
-
-    if(amount < 0) {
-      throw new RangeError('Amount of a product must be positive');
-    }
-
-    if(typeof isForAdult !== 'boolean') {
-      throw new TypeError('Only true or false');
-    }
-
     // this.name = name;
     // this.price = price;
     // this.amount = amount;
@@ -141,6 +117,19 @@ class Product {
     return this._name;
   };
 
+  get price () {
+    return this._price;
+  };
+
+  get amount () {
+    return this._amount;
+  };
+
+  get isForAdult () {
+    return this._isForAdult;
+  };
+
+
   // сеттер (встановлювач) - створює якусь псевдовластивість при спробі записати яку змінюється якась інша властивість
   set setterName (x) {
     if(typeof x !== ' string') {
@@ -158,6 +147,38 @@ class Product {
     };
 
     this._name = newName; // тут зʼвляється _name у обʼєкті продукта
+  };
+
+  set price (newPrice) {
+    if(typeof newPrice !== 'number' || isNaN(newPrice)) {
+      throw new TypeError('Price of a product must be numeric');
+    };
+
+    if(newPrice < 0) {
+      throw new RangeError('Price of a product must be positive');
+    }
+
+    this._price = newPrice;
+  };
+
+  set amount (newAmount) {
+    if(typeof newAmount !== 'number' || isNaN(newAmount)) {
+      throw new TypeError('Amount of a product must be numeric');
+    }
+
+    if(newAmount < 0) {
+      throw new RangeError('Amount of a product must be positive');
+    }
+
+    this._amount = newAmount;
+  };
+
+  set isForAdult (newIsForAdult) {
+    if(typeof newIsForAdult !== 'boolean') {
+      throw new TypeError('Only true or false');
+    }
+
+    this._isForAdult = newIsForAdult;
   };
 
   getPriceOfAllProduct () {
@@ -191,5 +212,3 @@ const product4 = new Product('name', 2, 2000, false);
 
 console.log(product4.getPriceOfAllProduct()); // 4000
 
-product4.amount = 'test';
-console.log(product4.getPriceOfAllProduct()); // 4000
