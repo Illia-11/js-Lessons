@@ -222,6 +222,7 @@ class Product {
   static staticProperty = 'This is static property of Product class';
 
   /**
+    Повертає правду якщо аргумент був створений за допомогою конструктора Product
    * @param {*} obj 
    * @returns {boolean}
    */
