@@ -32,6 +32,19 @@ const house1 = new OldHouse(3, 4, 'test address', 5000);
 const house2 = new OldHouse();
 
 // клас - новий синтаксис написання функції-конструкторів
+
+// вираз класу
+const Test = class {};
+
+
+function someWeirdFunction (classFunc) {};
+someWeirdFunction(Test);
+
+function classGenerator (...args) {
+  return class {};
+};
+
+// декларація класу
 class House {
   constructor (
     floors = 1, 
