@@ -87,6 +87,18 @@ class newHouse {
 
   // властивість прототипу (спільна однакова властивість всіх будинків)
   id = NaN;
+
+    /**
+   * Повертає правду якщо аргумент був створений за допомогою конструктора Product
+   * @param {*} obj
+   * @returns {boolean}
+   */
+  static isHouse (obj) {
+    // const isObjAHouse = obj instanceof House;
+    // return isObjAHouse;
+
+    return obj instanceof House;
+  }
 };
 
 const house3 = new newHouse ();
@@ -208,7 +220,16 @@ class Product {
 
   // статична властивість - властивість, яка буде у самого класу, а не у його екземплярів (конкретних обʼєктів)
   static staticProperty = 'This is static property of Product class';
+
+  /**
+   * @param {*} obj 
+   * @returns {boolean}
+   */
+  static isProduct (obj) {
+    return obj instanceof Product;
+  };
 };
+
 
 const product1 = new Product('ice cream', 40, 10, false);
 const product2 = new Product('water', 20, 30, false);
