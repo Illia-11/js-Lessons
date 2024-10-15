@@ -200,6 +200,14 @@ class Product {
 
     return this._price * this._amount;
   };
+
+  // статичний метод - метод, який буде у самого класу, а не у його екземплярів (конкретних обʼєктів)
+  static someStaticMethod2 () {
+    console.log('someStaticMethod2');
+  };
+
+  // статична властивість - властивість, яка буде у самого класу, а не у його екземплярів (конкретних обʼєктів)
+  static staticProperty = 'This is static property of Product class';
 };
 
 const product1 = new Product('ice cream', 40, 10, false);
@@ -225,3 +233,19 @@ const product4 = new Product('name', 2, 2000, false);
 
 console.log(product4.getPriceOfAllProduct()); // 4000
 
+// Array.isArray(product4);
+
+// const data1 = 'bvcxf';
+
+// const testArray = [];
+
+// testArray.isArray(data1);
+
+// testArray.push('some data');
+
+// Array.push(testArray, 'some data');
+
+
+Product.someStaticMethod1 = function () {
+  console.log('its static method of Product class');
+};
