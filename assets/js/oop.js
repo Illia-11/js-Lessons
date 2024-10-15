@@ -54,3 +54,45 @@ class Bird extends Animal {
 
 const parrot1 = new Bird('Kesha', 2, 1);
 const parrot2 = new Bird('NotKesha', 0.5, 0.8);
+
+
+// task
+
+class User {
+  constructor (firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.isBanned = false;
+  };
+
+  createMessage () {
+    console.log('Create  message');
+  };
+
+  deleteMessage () {
+    console.log('Delete message');
+  };
+};
+
+const user1 = new User('Ivan', 'Ivanov', 40);
+
+class Moderator extends User{
+  constructor (firstName, lastName, age, subforumList = []) {
+  super(firstName, lastName, age);
+  this.subForumList = [];
+  };
+  
+  createSubForum (forumName) {
+    this.subForumList.push(forumName);
+  };
+
+  deleteSubForum (forumName) {
+    // const newSubForumList = this.subForumList.filter((currentForum) => currentForum !== forumName);
+    // this.subForumList = newSubForumList;
+
+    this.subForumList = this.subForumList.filter((currentForum) => currentForum !== forumName);
+  };
+};
+
+const moderator1 = new Moderator('Moderator', 'Moderatorov', 30, ['blabla', 'some text', 'more text']);
