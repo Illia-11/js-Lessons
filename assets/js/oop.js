@@ -76,6 +76,7 @@ class User {
 };
 
 const user1 = new User('Ivan', 'Ivanov', 40);
+const user2 = new User('Pavlo', 'Pavlov', 35);
 
 class Moderator extends User{
   constructor (firstName, lastName, age, subforumList = []) {
@@ -96,3 +97,20 @@ class Moderator extends User{
 };
 
 const moderator1 = new Moderator('Moderator', 'Moderatorov', 30, ['blabla', 'some text', 'more text']);
+
+class Admin extends Moderator {
+  constructor(firstName, lastName, age, subforumList = [], contactEmail) {
+    super(firstName, lastName, age, subforumList = []);
+    this.contactEmail = contactEmail;
+  };
+
+  ban (user) {
+    user.isBanned = true;
+  };
+    
+  unban (user) {
+    user.isBanned = false;
+  };
+};
+
+const admin1 = new Admin('Petro', 'Petrov', 40);
