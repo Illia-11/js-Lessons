@@ -73,6 +73,10 @@ class User {
   deleteMessage () {
     console.log('Delete message');
   };
+
+  static isUser (value) {
+    return value instanceof User;
+  };
 };
 
 const user1 = new User('Ivan', 'Ivanov', 40);
@@ -105,12 +109,26 @@ class Admin extends Moderator {
   };
 
   ban (user) {
+    if(!User.isUser(user)) {
+      throw new TypeError('user must be instance of User class');
+    };
+
+    if(user.isBanned) {
+      return user;
+    };
+
     user.isBanned = true;
   };
     
   unban (user) {
+    if(!user.isBanned) {
+      return user;
+    };
+
     user.isBanned = false;
   };
 };
 
 const admin1 = new Admin('Petro', 'Petrov', 40);
+
+admin1.ban(admin1); // admin1.isBanned = true (може забанити сам себе)
