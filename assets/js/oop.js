@@ -249,3 +249,120 @@ function getAreaOfFigure (figure) {
 //     console.log('Panther is eating birds');
 //   };
 // };
+
+
+// 3. Інкапсуляція - приховування внутрішнього стану та методів обʼєкту від зовнішнього світу
+class Animal {
+  // створення приватної властивості
+  #secret;
+  #hunger;
+  #mood;
+  #energy
+
+  constructor (nickname, type = 'animal') {
+    this.nickname = nickname;
+    this.type = type;
+
+    // 0 (голодна) - 100 (сита)
+    this.#hunger = 50;
+
+    // 0 (стомлена) - 100 (повна сил)
+    this.#energy = 50;
+
+    // 0 (розлючена) - 100 (задоволена)
+    this.#mood = 50;
+
+    this.#secret = 'try find me';
+  };
+
+  get hunger () {
+    return this.#hunger;
+  };
+
+  get energy () {
+    return this.#energy;
+  };
+
+  get mood () {
+    return this.#mood;
+  };
+
+  // приватні методи - можна запускати тільки в коді всередені класу
+  #setMood (newMood) {
+    if(typeof newMood !== 'number' || isNaN(newMood)) {
+      throw new TypeError('you must give number');
+    };
+
+    if(newMood <= 100 && newMood >= 0) {
+      this.#mood = newMood;
+    } else if(newMood < 0 ) {
+      this.#mood = 0;
+    } else if (newMood > 100) {
+      this.#mood = 100;
+    }
+  };
+
+  #setHunger (newHunger) {
+    if(typeof newHunger !== 'number' || isNaN(newHunger)) {
+      throw new TypeError('you must give number');
+    };
+
+    if(newHunger <= 100 && newHunger >= 0) {
+      this.#hunger = newHunger;
+    } else if(newHunger < 0 ) {
+      this.#hunger = 0;
+    } else if (newHunger > 100) {
+      this.#hunger = 100;
+    }
+  };
+
+  #setEnergy (newEnergy) {
+    if(typeof newEnergy !== 'number' || isNaN(newEnergy)) {
+      throw new TypeError('you must give number');
+    };
+
+    if(newEnergy <= 100 && newEnergy >= 0) {
+      this.#energy = newEnergy;
+    } else if(newEnergy < 0 ) {
+      this.#energy = 0;
+    } else if (newEnergy > 100) {
+      this.#energy = 100;
+    }
+  };
+
+  move () {
+    this.#setEnergy(this.energy - 5);
+
+    this.#setHunger(this.hunger - 10);
+
+    console.log(`${this.nickname} is moving`);
+  }
+
+  sleep () {
+    this.energy += 50;
+
+    console.log(`${this.nickname} is sleeping`);
+  };
+
+  eat () {
+    const hungerSated = 5;
+    
+    this.hunger += hungerSated;
+
+    this.mood += 10;
+
+    console.log(`${this.nickname} is eating`);
+  };
+};
+
+const animal1 = new Animal('Myrzik', 'cat');
+
+class Dog extends Animal {
+  constructor(nickname) {
+    super(nickname, 'dog')
+  };
+
+  sleep () {
+    // this.#setEnergy(this.energy - 10); // error
+  };
+};
