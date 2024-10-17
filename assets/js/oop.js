@@ -200,3 +200,52 @@ function getAreaOfFigure (figure) {
 
   throw new TypeError('figure must be ibstance of Figure');
 };
+
+// task
+
+// class Animal {
+//     constructor (nickname, type = 'animal') {
+//       this.nickname = nickname;
+//       this.type = type;
+//     };
+  
+//     move () {
+//       console.log(`${this.nickname} is moving`);
+//     }
+
+//     sleep () {
+//       console.log(`${this.nickname} is sleeping`);
+//     };
+  
+//     eat () {
+//       console.log(`${this.nickname} is eating`);
+//     };
+//   };
+
+// class Snake extends Animal {
+//   constructor (nickname, type) {
+//     super(nickname, 'snake');
+//   };
+
+//   move () {
+//     console.log('Snake is crawl');
+//   };
+
+//   eat () {
+//     console.log('Sneak is eating mouses');
+//   };
+// };
+
+// class Panther extends Animal {
+//   constructor (nickname, type) {
+//     super(nickname, 'panther');
+//   };
+
+//   move () {
+//     console.log('Panther is runing');
+//   };
+
+//   eat () {
+//     console.log('Panther is eating birds');
+//   };
+// };
