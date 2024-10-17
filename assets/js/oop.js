@@ -132,3 +132,71 @@ class Admin extends Moderator {
 const admin1 = new Admin('Petro', 'Petrov', 40);
 
 admin1.ban(admin1); // admin1.isBanned = true (може забанити сам себе)
+
+// /**
+//  * 
+//  * @param {number} a 
+//  */
+// function getAreOfFigure (a) {
+//   return a*a;
+// };
+
+// /**
+//  * 
+//  * @param {number} a 
+//  * @param {number} b 
+//  */
+// function getAreOfFigure (a, b) {
+//   return a*b;
+// };
+
+// getAreOfFigure(2); // 4
+// getAreOfFigure(3,8); // 24
+
+
+// 2. Поліморфізм - можливість методів успадкованих класів працювати по різному
+class Figure {
+  constructor(name) {
+    this.name = name;
+  };
+
+  getArea() {
+    console.log(`this function will calculate area of ${this.name}`);
+  };
+};
+
+class Rectangle extends Figure{
+  constructor(a, b) {
+    super('rectangle');
+    this.a = a;
+    this.b = b;
+  };
+
+  getArea() {
+    return this.a * this.b;
+  };
+
+  static isFigure (value) {
+    return value instanceof Figure;
+  };
+};
+
+class Triangle extends Figure {
+  constructor(a, h) {
+    super('triangle');
+    this.a = a;
+    this.h = h;
+  };
+
+  getArea() {
+    return this.a * this.h * 0.5;
+  };
+};
+
+function getAreaOfFigure (figure) {
+  if(Figure.isFigure(figure)) {
+    return figure.getArea();
+  };
+
+  throw new TypeError('figure must be ibstance of Figure');
+};
