@@ -402,7 +402,7 @@ class Computer {
 /*
   SOLID
 
-    S - SRP (Single Responsibility Principle) - Принцип єдиної відповідальності
+    S - SRP (Single responsibility principle) - Принцип єдиної відповідальності
     O - OCP (Open/closed principle) - Принцип відкритості/закритості
     L - LSP (Liskov substitution principle) - Принцип підстановки Лісков
     I - ISP (Interface segregation principle) - Принцип розділення інтерфейсу
@@ -454,7 +454,45 @@ const filterByProp = (array, propName, propValue) => {
   return array.filter(element => element[propName] === propValue);
 };
 
-// Принцип підстановки Лісков - 
+// Принцип підстановки Лісков - екземпляри базового класу мають бути заміненими екземплярами успадкуючиї класів без змін коду
+// class Figure {
+//   constructor(name) {
+//     this.name = name;
+//   };
+
+//   getArea() {
+//     console.log(`this function will calculate area of ${this.name}');
+//   };
+// };
+
+// class Rectangle extends Figure{
+//   constructor(a, b) {
+//     super('rectangle');
+//     this.a = a;
+//     this.b = b;
+//   };
+
+//   getArea() {
+//     return this.a * this.b;
+//   };
+
+//   static isFigure (value) {
+//     return value instanceof Figure;
+//   };
+// };
+
+// class Triangle extends Figure {
+//   constructor(a, h) {
+//     super('triangle');
+//     this.a = a;
+//     this.h = h;
+//   };
+
+//   getArea() {
+//     return this.a * this.h * 0.5; // повертає число
+//   };
+// };
+
 
 // Принцип розділення інтерфейсу - 
 
