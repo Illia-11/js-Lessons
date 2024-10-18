@@ -493,7 +493,7 @@ const filterByProp = (array, propName, propValue) => {
 //   };
 // };
 
-// Принцип розділення інтерфейсу - 
+// Принцип розділення інтерфейсу - інтерфейс може бути поділений на спеціалізовані ще на стадії проєктування
 class Product {
   constructor() {
     // ...
@@ -521,7 +521,7 @@ class DigitalProduct extends Product{
   // по умовам завдання saveToDataBase не має бути
 };
 
-class PhusicalProduct extends Product {
+class PhysicalProduct extends Product {
   constructor() {
     super();
     // ...
@@ -532,4 +532,26 @@ class PhusicalProduct extends Product {
   };
 };
 
-// Принцип інверсії залежностей - 
+// Принцип інверсії залежностей -  модулі вищих рівнів не мають залежати від модулів нижчих рівнів
+class DeliveryService {};
+
+class UkrPoshtaDelivery extends DeliveryService{};
+
+class NovaPoshtaDelivery extends DeliveryService{};
+
+// class Order {
+//   constructor() {
+//     // ...
+//     this.deliveryService = new UkrPoshtaDelivery();
+//   };
+// };
+
+class Order {
+/**
+ * @param {DeliveryService} deliveryService 
+ */
+  constructor(deliveryService) {
+    // ...
+    this.deliveryService = deliveryService;
+  };
+};
