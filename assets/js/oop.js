@@ -403,6 +403,10 @@ class Computer {
   SOLID
 
     S - SRP (Single Responsibility Principle) - Принцип єдиної відповідальності
+    O - OCP (Open/closed principle) - Принцип відкритості/закритості
+    L - LSP (Liskov substitution principle) - Принцип підстановки Лісков
+    I - ISP (Interface segregation principle) - Принцип розділення інтерфейсу
+    D - DIP (Dependency inversion principle) - Принцип інверсії залежностей
 */
 
 // Принциа єдиної відповідальності - кожен обʼєкт / метод / клас має мати лише одну річ якої він використовується
@@ -418,3 +422,40 @@ function generateReport(worker, salary) {
   const performaneReport = worker.hoursWorked ** 2;
   return performaneReport;
 };
+
+// Принцип відкритості/закритості - код має бути відкритим для розширення але закритим для прямих змін
+class Worker {
+  constructor(fullName, hoursWorked, hourlyRate, education, workplace) {
+    this.fullName = fullName;
+    this.hoursWorked = hoursWorked;
+    this.hourlyRate = hourlyRate;
+    this.education = education;
+    this.workplace = workplace;
+  };
+};
+
+const workers = [];
+
+class WorkerFilter {
+  static filterByName(workers, fullName) {
+    return workers.filter(worker => worker.fullname === fullName);
+  };
+
+  static filterByEducation(workers, education) {
+    return workers.filter(worker => worker.education === education);
+  };
+
+  static filterByRate(workers, hourlyRate) {
+    return workers.filter(worker => worker.hourlyRate === hourlyRate);
+  };
+};
+
+const filterByProp = (array, propName, propValue) => {
+  return array.filter(element => element[propName] === propValue);
+};
+
+// Принцип підстановки Лісков - 
+
+// Принцип розділення інтерфейсу - 
+
+// Принцип інверсії залежностей - 
