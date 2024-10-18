@@ -397,3 +397,24 @@ class Computer {
     this.#startOS();
   };
 };
+
+
+/*
+  SOLID
+
+    S - SRP (Single Responsibility Principle) - Принцип єдиної відповідальності
+*/
+
+// Принциа єдиної відповідальності - кожен обʼєкт / метод / клас має мати лише одну річ якої він використовується
+function calculateSalary(worker) {
+  const salary = worker.hoursWorked * worker.hourlyRate;
+
+  // const performaneReport = worker.hoursWorked ** 2;
+
+  return salary;
+};
+
+function generateReport(worker, salary) {
+  const performaneReport = worker.hoursWorked ** 2;
+  return performaneReport;
+};
