@@ -257,7 +257,7 @@ class Animal {
   #secret;
   #hunger;
   #mood;
-  #energy
+  #energy;
 
   constructor (nickname, type = 'animal') {
     this.nickname = nickname;
@@ -364,5 +364,36 @@ class Dog extends Animal {
 
   sleep () {
     // this.#setEnergy(this.energy - 10); // error
+  };
+};
+
+
+// 4. Абстракція - (не всіма вважається окремою концепцією)
+/*
+  полягає у виділенні найважливіших методів та властивостй обʼєкту для вирішення задач
+  інші методи та деталі не реалізуються
+  при цьому публічні методи, які залишаються у обʼєкті вважаються достатніми для ефективної роботи з ними
+*/
+class Computer {
+  #isOn;
+  constructor() {
+    this.#isOn;
+  }
+
+  // низкорівневі (складні для розуміння для загальної маси людей) методи
+  #applyCurrent() {};
+
+  #enablePeriferuDevices() {};
+
+  #startBIOS() {};
+
+  #startOS() {};
+
+  // високорівневий метод (простий у викорристанні)
+  turnOn() {
+    this.#applyCurrent();
+    this.#enablePeriferuDevices();
+    this.#startBIOS();
+    this.#startOS();
   };
 };
