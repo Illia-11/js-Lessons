@@ -454,7 +454,7 @@ const filterByProp = (array, propName, propValue) => {
   return array.filter(element => element[propName] === propValue);
 };
 
-// Принцип підстановки Лісков - екземпляри базового класу мають бути заміненими екземплярами успадкуючиї класів без змін коду
+// Принцип підстановки Лісков - екземпляри базового класу мають бути заміненими екземплярами успадкуючих класів без змін коду
 // class Figure {
 //   constructor(name) {
 //     this.name = name;
@@ -493,7 +493,43 @@ const filterByProp = (array, propName, propValue) => {
 //   };
 // };
 
-
 // Принцип розділення інтерфейсу - 
+class Product {
+  constructor() {
+    // ...
+  };
+
+  getDetails() {
+    // ...
+  };
+
+  displayinFrontEnd() {
+    // ...
+  };
+
+  // saveToDataBase() {
+  //   // ...
+  // };
+};
+
+class DigitalProduct extends Product{
+  constructor() {
+    super();
+    // ...
+  };
+
+  // по умовам завдання saveToDataBase не має бути
+};
+
+class PhusicalProduct extends Product {
+  constructor() {
+    super();
+    // ...
+  };
+
+  saveToDataBase() {
+    // ...
+  };
+};
 
 // Принцип інверсії залежностей - 
