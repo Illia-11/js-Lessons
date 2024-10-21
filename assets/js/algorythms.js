@@ -59,7 +59,21 @@ function getVowelsNumber(str, vowelArray = ['a', 'e', 'i', 'o', 'u']) {
 */
 
 // O(1) - константна складність
-const arr1 = [1, 5, 7, 20, 5];
+const arr1 = [1, 5, 7, 20, 21];
 function getElemOfArray (array, elemIndex) {
   return array[elemIndex];
 }
+
+// O(n) - лінійна складність
+function getElemIndex (array, elemValue) {
+
+  for(let i = 0; i < array.length; i++) {
+    if(array[i] === elemValue) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+getElemIndex(arr1, 21);
