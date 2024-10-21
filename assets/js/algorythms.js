@@ -59,7 +59,7 @@ function getVowelsNumber(str, vowelArray = ['a', 'e', 'i', 'o', 'u']) {
 */
 
 // O(1) - константна складність
-const arr1 = [1, 5, 7, 20, 21];
+const arr1 = [1, 5, 7, 20, 21, 4, -24];
 function getElemOfArray (array, elemIndex) {
   return array[elemIndex];
 }
@@ -77,3 +77,32 @@ function getElemIndex (array, elemValue) {
 }
 
 getElemIndex(arr1, 21);
+
+// O(n^2) - квадратична складність
+/*
+  1. проходимось по масиву та порівнюємо два сусідніх елементи
+  2. якщо в першого значення більше ніж у другого, то міняємо іх місцями
+  3. повторюємо ці дії поки найбільші значення не опиняться в кінці масиву, а найменше на початку
+*/
+function bubbleSort (array) {
+  for(let i = 0; i < array.length; i++) {
+    // O (n * n) = O(n ^ 2)
+    for(let j = 1; j < array.length; j++) {
+      let value1 = array[j - 1];
+      let value2 = array[j];
+
+      if(value1 < value2) {
+        array[j] = value1;
+        array[j - 1] = value2;
+      }
+    }
+
+    // O (n * n * n) = O(3n)
+    for(let k = 0; k < array.length; k++) {}
+  }
+
+  // O (n + n) = O (2n) = O(n)
+  // for(let k = 0; k < array.length; k++) {}
+
+  return array;
+}
