@@ -252,7 +252,7 @@ function getAreaOfFigure (figure) {
 
 
 // 3. Інкапсуляція - приховування внутрішнього стану та методів обʼєкту від зовнішнього світу
-class Animal {
+class Animal2 {
   // створення приватної властивості
   #secret;
   #hunger;
@@ -355,9 +355,9 @@ class Animal {
   };
 };
 
-const animal1 = new Animal('Myrzik', 'cat');
+const animal1 = new Animal2('Myrzik', 'cat');
 
-class Dog extends Animal {
+class Dog extends Animal2 {
   constructor(nickname) {
     super(nickname, 'dog')
   };
@@ -532,7 +532,7 @@ class PhysicalProduct extends Product {
   };
 };
 
-// Принцип інверсії залежностей -  модулі вищих рівнів не мають залежати від модулів нижчих рівнів
+// Принцип інверсії залежностей - модулі вищих рівнів не мають залежати від модулів нижчих рівнів
 class DeliveryService {};
 
 class UkrPoshtaDelivery extends DeliveryService{};
@@ -555,3 +555,46 @@ class Order {
     this.deliveryService = deliveryService;
   };
 };
+
+
+// DRY (Dont Repeat Yourself) - не повторюйся
+
+// /**
+//  * @param {object} data
+//  * @returns {string}
+//  */
+// function generateAccessToken (data) {
+//   // якийсь код генераціх токена
+//   const token = data.toString();
+
+//   return token;
+// };
+
+// /**
+//  * @param {object} data
+//  * @returns {string}
+//  */
+// function generateRefreshToken (data) {
+//   // якийсь код генераціх токена
+//   const token = data.toString();
+
+//   return token;
+// };
+
+function generateToken (data, options) {
+    // якийсь код генераціх токена
+    const token = data.toString();
+
+    return token;
+};
+
+
+// KISS (Keep It Simple Stupid) - між рішенням яке є складнішим для розуміння і більш простип кодом варто обирати саме простіший запис
+
+const getVowelsNumberCompact = (str, vowelArray = ['a', 'e', 'i', 'o', 'u']) =>
+  str
+    .toLowerCase()
+    .split('')
+    .filter((l) => vowelArray.includes(l)).lenght;
+
+
