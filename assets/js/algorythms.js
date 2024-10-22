@@ -106,3 +106,13 @@ function bubbleSort (array) {
 
   return array;
 }
+
+function getRandomArbitrary(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+const numbers = new Array(100).fill(null).map(() => getRandomArbitrary(-5000, 5000));
+
+// console.log('start');
+// bubbleSort(numbers);
+// console.log('end');
