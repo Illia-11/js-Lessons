@@ -116,3 +116,36 @@ const numbers = new Array(100).fill(null).map(() => getRandomArbitrary(-5000, 50
 // console.log('start');
 // bubbleSort(numbers);
 // console.log('end');
+
+// O(log N) - логорифмічна складність
+/*
+  Бінарний пошук
+    Масив обовʼязково має бути відсортованим
+    1. знаходимо середину масиву і перевіряємо значення у ній
+    2.1 якщо співпало то кінець
+    2.2 якщо значення менше то відсікаємо ліву частину включно з серединою
+    2.3 якщо значення більше то відсікаємо праву частину включно з серединою
+    3. повторюємо все з п 1 поки не знайдемо значення або елементи не закінчаться
+*/
+function binarySearch (array, targetElem) {
+  let startingIndex = 0;
+  let lastIndex = array.length - 1;
+
+  while(startingIndex <= lastIndex) {
+    let middleIndex = Math.floor((startingIndex + lastIndex) / 2);
+
+    if(array[middleIndex] === targetElem) {
+      return middleIndex;
+    }
+
+    if(array[middleIndex] < targetElem) {
+      startingIndex = middleIndex + 1;
+    } else {
+      lastIndex = middleIndex - 1;
+    }
+  }
+
+  return -1;
+}
+
+const numbers1 = [-20000, -764, -134, -45, 0, 23, 235, 547, 780, 1234, 15000, 64590, 57904216, 5271983653];
