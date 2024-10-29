@@ -66,3 +66,17 @@ const arrWithUniqueNumbers = [...set3] // або так
 const arrWithUniqueNumbers2 = [...new Set([1,2,3,5,7,1,9,8,5,8,2])] // або так
 
 console.log(arrWithUniqueNumbers2)
+
+// task
+/*
+  створити 2 масиви з іменами
+  за допомогою Set отримати з них один масив з унікальними іменами
+  деякі імена мають бути присутні в обох початкових масивах
+*/
+const nameArray1 = ['Oleg', 'Anton', 'Petro', 'Olga']
+
+const nameArray2 = ['Anton', 'Natalia', 'Timur', 'Petro']
+
+const arrWithUniqueNames = [...new Set([...nameArray1, ...nameArray2])]
+
+console.log(arrWithUniqueNames)
