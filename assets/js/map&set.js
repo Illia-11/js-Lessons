@@ -155,3 +155,46 @@ map1.forEach((value, key, map) => {
   console.log(`map is`)
   console.log(map)
 })
+
+// cache
+
+// уявна функція, яка довго працює
+function expensiveCalculations(user) {
+  // якісь складні довгі обчислення
+  for(let i = 0; i < 1_000_000; i++) {}
+
+  user.salary = user.salary ? user.salary + 10 : 100
+
+  return user
+}
+
+console.log(expensiveCalculations(5))
+
+const cache = new Map()
+
+function effectiveCalculations(user) {
+  if(cache.has(user)) {
+    return cache.get(user)
+  }
+
+  const result = expensiveCalculations(user)
+  cache.set(user, result)
+
+  return result
+}
+
+const res1 = effectiveCalculations(user1)
+
+console.log(res1)
+
+const user2 = {
+  salary: 20
+}
+
+const res2 = effectiveCalculations(user2)
+
+console.log(res2)
+
+const res3 = effectiveCalculations(user2)
+
+console.log(res3)
