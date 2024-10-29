@@ -80,3 +80,78 @@ const nameArray2 = ['Anton', 'Natalia', 'Timur', 'Petro']
 const arrWithUniqueNames = [...new Set([...nameArray1, ...nameArray2])]
 
 console.log(arrWithUniqueNames)
+
+// Map (мапа, карта, словник, асоціативний масив) - колекція, яка зберагіє пари
+// ключ - значення
+
+const obj = {
+  key: 'value',
+  0: 'test',
+  [Symbol('private')]: true
+}
+
+for(const key in obj) {
+  console.log(key)
+}
+
+/*
+  відмінності мапи від обʼєкта:
+    1. мапа запамʼятовує порядок вставки даних
+    2. мапа може використовувати будь-який тип даних у якості ключа
+    3. мапа знає скільки елементів в ній знаходитсья
+    4. є ітератор (тобто буде легше пройтися по всім елементам мапи)
+    5. швидше працює при додаванні або видаленні значень
+*/
+
+// створення пустої мапи
+const map1 = new Map()
+
+// додавання або перезаписування елементів до мапи
+map1.set('key', 'value')
+map1.set(1, true)
+map1.set('123', null)
+map1.set('123', [1,2,3,4,5])
+
+const sum = (...numbers) => numbers.reduce((acc, num) => acc += num)
+
+map1.set(sum, 'mu key is a function')
+
+map1.set({}, 1)
+map1.set({}, 2)
+
+const user1 = {}
+
+map1.set(user1, 3) // це не додасть
+map1.set(user1, 4)
+
+// отримання значень з мапи
+
+const value1 = map1.get(user1)
+const value2 = map1.get('123')
+const value3 = map1.get(sum)
+
+const value4 = map1.get(-2135568925) // undefined
+
+// перевірка на наявність елемента по ключу
+const has123Key = map1.has(123) // true
+const has4Key = map1.has(4) // false
+
+// видалення запису по ключу
+const deleteRes = map1.delete(123)
+const deleteRes2 = map1.delete(4) // false
+
+// очистка мапи
+map1.clear()
+
+// розмір мапи
+console.log(map1.size)
+
+// forEach
+map1.forEach((value, key, map) => {
+  console.log(`value is`)
+  console.log(value)
+  console.log(`key is`)
+  console.log(key)
+  console.log(`map is`)
+  console.log(map)
+})
