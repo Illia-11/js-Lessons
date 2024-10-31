@@ -69,3 +69,30 @@ function printList(list) {
   };
 };
 console.log(printList(list));
+
+// console.log('========')
+
+// class OrderTracker {
+//   constructor() {
+//     this.order = new Map()
+//   }
+//   addOrder(user) {
+//     this.order.set(user, (this.order.get(user) || 0) +1)
+//   }
+//   getOrderCount(user) {
+//     return this.order.get(user) || 0
+//   }
+//   removeUser(user) {
+//     this.order.delete(user)
+//   }
+// }
+// const tracker = new OrderTracker()
+// tracker.addOrder("Alice");
+// tracker.addOrder("Alice");
+// tracker.addOrder("Bob");
+// console.log(tracker.getOrderCount("Alice")); // 2
+// console.log(tracker.getOrderCount("Bob")); // 1
+// tracker.removeUser("Bob");
+// console.log(tracker.getOrderCount("Bob")); // 0
+
+// console.log('========')

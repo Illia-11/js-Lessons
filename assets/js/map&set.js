@@ -114,7 +114,7 @@ map1.set('123', [1,2,3,4,5])
 
 const sum = (...numbers) => numbers.reduce((acc, num) => acc += num)
 
-map1.set(sum, 'mu key is a function')
+map1.set(sum, 'my key is a function')
 
 map1.set({}, 1)
 map1.set({}, 2)
@@ -198,3 +198,67 @@ console.log(res2)
 const res3 = effectiveCalculations(user2)
 
 console.log(res3)
+
+
+// task 2
+/*
+  Створити функцію яка буде приймати рядок
+  функція має створювати мапу та повертати її як свй результат
+  у мапі мають бути наступні дані:
+    ключами мапи будуть символи рядка
+    значеннями мапи кількість цих символів у рядку
+  
+    мапа має ігнорувати симовли яки не є буквами або цифрами (пробіли, коми, крапки ...)
+
+  const str = 'test, text.';
+
+  const map = calculateLetters(str);
+
+  map:
+    t => 4,
+    e => 2,
+    s => 1,
+    x => 1
+*/
+// function calculateLetters(str) {
+//   const map = new Map()
+
+//   for(let i of str){
+//     if(/[a-zA-Z0-9]/.test(i)) {
+//       i = i.toLowerCase()
+//       map.set(i, (map.get(i) || 0) + 1)
+//     }
+//   }
+
+//   return map
+// }
+
+// const result = calculateLetters('text, test')
+// console.log(result)
+
+// або
+
+function createLettersMap(str, ignoredSymbols = [' ', ',', '.', '!', '-']) {
+  const letterMap = new Map()
+
+  // const ignoredSymbols = [' ', ',', '.', '!', '-']
+
+  for(const letter of str) {
+    // if(letterMap.has(letter)) {
+    //   letterMap.set(letter, letterMap.get(letter) + 1)
+    // } else {
+    //   letterMap.set(letter, 1)
+    // }
+
+    if(ignoredSymbols.includes(letter)) {
+      letterMap.set(letter, letterMap.has(letter) ? letterMap.get(letter) + 1 : 1)
+    }
+  }
+
+  return letterMap
+}
+
+const str = 'test, text'
+
+const letterMap1 = createLettersMap(str)
+console.log(letterMap1)
