@@ -272,3 +272,62 @@ const str = 'test, text'
 
 const letterMap1 = createLettersMap(str)
 console.log(letterMap1)
+
+
+// keys, values, entries
+
+// keys - прохід по всім ключам мапи
+
+const mapKeysIterator = letterMap1.keys()
+
+for(const key of letterMap1.keys()) {
+  console.log(key)
+}
+
+// values = прохід по всім значенням в записсах мапи
+
+for(const value of letterMap1.values()) {
+  console.log(value)
+}
+
+// entries - повертає ітератор з входженням у мапу
+console.log('entries below')
+for(const entry of letterMap1.entries()) {
+  console.log(entry) // кортежі записів мапи
+
+  let key = entry[0]
+  let value = entry[1]
+
+  console.log(key)
+  console.log(value)
+}
+
+// теж саме що і letterMap1.entries
+for(const data of letterMap1) {
+  console.log(data)
+}
+
+// на основі мапи зробити її копію
+const mapCopy = new Map([
+  ...letterMap1,
+  // ...map1,
+  // ...map2
+])
+
+// для сетів ці методи працюю аналогічно, але так як у сетів немає ключів - то замість ключів дають значення
+for(const key of set3.keys()) {
+  console.log(key) // насправді value
+}
+
+for(const value of set3.values()) {
+  console.log(value) // value
+}
+
+for(const entry of set3.entries()) {
+  console.log(entry) // кортеж форми [value, value]
+}
+
+// стандартний ітератор - values
+for(const entry of set3) {
+  console.log(entry)
+}
