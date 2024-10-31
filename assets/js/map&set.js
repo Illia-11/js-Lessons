@@ -331,3 +331,27 @@ for(const entry of set3.entries()) {
 for(const entry of set3) {
   console.log(entry)
 }
+
+/*
+  Object.keys(obj) - повертає масив ключів обʼєкта
+  Object.values(obj) - повертає масив значень обʼєкта
+  Object.entries(obj) - повертає масив кортежів форми [key, value]
+*/
+
+const obj1 = {
+  firstName: 'User',
+  lastName: 'Userenko',
+  age: 12,
+  isMale: true,
+  [Symbol('test')]: 'test',
+  0: 'data'
+}
+
+const arrayOfKeys = Object.keys(obj1)
+console.log(arrayOfKeys)
+
+const arrayOfValues = Object.values(obj1)
+console.log(arrayOfValues)
+
+const arrayOfEntries = Object.entries(obj1)
+console.log(arrayOfEntries)
