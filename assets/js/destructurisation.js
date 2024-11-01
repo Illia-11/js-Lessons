@@ -1,5 +1,5 @@
 /*
-  Деструктуризація = особливий спосіб створення змінних
+  Деструктуризація - особливий спосіб створення змінних
 */
 
 const monitor = {
@@ -77,3 +77,30 @@ const user = {
 
 // rest у деструктуризації обʼєкта створює новий обʼєкт у якому будуть всі недеструктуровані дані
 const {password, ...userWithoutPassword} = user
+
+// Деструктуризація масивів / ітерабельних обʼєктів
+
+const numbers = [50, 156.6, -574, 0, NaN, -2, 5]
+
+// створити змінну у яку покласти 1 елемент масиву
+// const firstElem = numbers[0]
+
+const [firstElem, secondElem, third, fourth] = numbers
+
+// якщо елемент треба пропустити - просто поставити кому без назви
+const [,, thirdElem, fourthElem] = numbers
+
+// rest оператор завжди створить масив з недеструктуризованими елементами
+const [firstNumber, secondNumber,, ...restNumbers] = numbers
+
+
+const testMap = new Map([
+  ['user1', {name: 'Test User'}], 
+  ['user2', {name: 'Null Undefined'}]
+])
+
+for(const [key, {name}] of testMap) {
+
+  console.log(key)
+  console.log(name)
+}
