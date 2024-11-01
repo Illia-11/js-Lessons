@@ -27,11 +27,16 @@ console.log(monitor.color);
 console.log(monitor.sizes.width.value)
 
 // створити функцію, яка рахує діагональ монітора
-function calculateDiagonal(monitor) {
+function calculateDiagonal({
+  sizes: {
+    width: {value: width},
+    height: {value: height}
+  }
+}) {
   // const width = monitor.sizes.width.value
   // const height = monitor.sizes.height.value
 
-  const {sizes: {width: {value: width}, height: {value: height}}} = monitor
+  // const {sizes: {width: {value: width}, height: {value: height}}} = monitor
 
   return Math.sqrt(width * width + height * height)
 }
